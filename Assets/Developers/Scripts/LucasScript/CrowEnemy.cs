@@ -13,8 +13,8 @@ public class CrowEnemy : MonoBehaviour
     void Start()
     {
 
-        MoveCrow();
-        
+        speedCrow = 0.03f;
+
     }
 
 
@@ -22,17 +22,23 @@ public class CrowEnemy : MonoBehaviour
     {
 
         CheckHealth();
+
+        MoveCrow();
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        DashToPlayer();
         
     }
 
     private void MoveCrow()
     {
+        speedCrow -= Time.deltaTime;
 
-        speedCrow = -1f;
-
-        rbCrow.linearVelocity = transform.right * speedCrow;
-
-        tfCrow.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        tfCrow.position = new Vector3(speedCrow -= transform.position.x, transform.position.y, transform.position.z);
 
     }
 
@@ -51,7 +57,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        //there will be script here trust
+        
 
     }
 }
