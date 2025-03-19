@@ -47,4 +47,11 @@ public class CrowEnemy : MonoBehaviour
         }
 
     }
+
+    private void DashToPlayer()
+    {
+
+        //there will be script here trust
+
+    }
 }
