@@ -9,11 +9,15 @@ public class CrowEnemy : MonoBehaviour
 
     [SerializeField] Transform tfCrow;
 
+    private Transform player;
+
     private float healthCrow = 3f;
     void Start()
     {
 
-        speedCrow = 0.03f;
+        speedCrow = -1.5f;
+
+        MoveCrow();
 
     }
 
@@ -23,22 +27,27 @@ public class CrowEnemy : MonoBehaviour
 
         CheckHealth();
 
-        MoveCrow();
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        player = other.GetComponent<Transform>();
+
+        ChangeDirection();
 
         DashToPlayer();
-        
+
     }
 
     private void MoveCrow()
     {
-        speedCrow -= Time.deltaTime;
 
-        tfCrow.position = new Vector3(speedCrow -= transform.position.x, transform.position.y, transform.position.z);
+        rbCrow.linearVelocity = transform.right * speedCrow;
 
     }
 
@@ -57,7 +66,22 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        
+        speedCrow = 15f;
+
+        MoveCrow();
 
     }
+
+    private void ChangeDirection()
+    {
+
+        Vector3 direction = player.position - transform.position;
+
+
+        //Some magic line that makes it turn
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+    }    
 }
