@@ -28,7 +28,7 @@ public class CrowEnemy : MonoBehaviour
     private void MoveCrow()
     {
 
-        speedCrow = -10f;
+        speedCrow = -1f;
 
         rbCrow.linearVelocity = transform.right * speedCrow;
 
