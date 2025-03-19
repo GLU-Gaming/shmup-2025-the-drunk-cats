@@ -31,16 +31,23 @@ public class CrowEnemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+    
+
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        player = other.GetComponent<Transform>();
+        if (other.CompareTag("Player"))
+        {
 
-        ChangeDirection();
+            player = other.GetComponent<Transform>();
 
-        DashToPlayer();
+            ChangeDirection();
+
+            DashToPlayer();
+
+        }
 
     }
 
@@ -77,8 +84,6 @@ public class CrowEnemy : MonoBehaviour
 
         Vector3 direction = player.position - transform.position;
 
-
-        //Some magic line that makes it turn
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
