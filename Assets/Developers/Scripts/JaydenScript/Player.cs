@@ -1,9 +1,13 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public GameObject player;
     public float speed = 5f;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
+    public float fireRate = 0.5f;
+    private float nextFireTime = 0f;
     private float moveY;
     private float moveX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,9 +16,20 @@ public class Movement : MonoBehaviour
         
     }
 
+    public void shoot()
+    {
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    }
     // Update is called once per frame
     void Update()
     {
+
+      if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
+      {
+      shoot();
+            nextFireTime = Time.time + fireRate;
+    }
+
         moveX = 0f;
         moveY = 0f;
 
