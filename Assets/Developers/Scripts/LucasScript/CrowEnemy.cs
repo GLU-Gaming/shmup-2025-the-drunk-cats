@@ -74,6 +74,7 @@ public class CrowEnemy : MonoBehaviour
     private void CheckHealth()
     {
 
+        //If statement is true destroy the gameObject.
         if (healthCrow <= 0)
         {
 
@@ -113,7 +114,6 @@ public class CrowEnemy : MonoBehaviour
 
             Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
         }
-
 
     }
 
