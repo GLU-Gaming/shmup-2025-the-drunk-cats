@@ -487,6 +487,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012206051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1799426466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 355366783787192375, guid: a143702aa08a1714abe5014675761b45, type: 3}
+  m_PrefabInstance: {fileID: 1306895806203563480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1306895806203563480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,6 +504,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrowEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6691292067131983011, guid: a143702aa08a1714abe5014675761b45, type: 3}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745383814497619191, guid: a143702aa08a1714abe5014675761b45, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2878698992006263833, guid: e2f3aea9da0de934e84ad3208dd50e82, type: 3}
+    - target: {fileID: 8745383814497619191, guid: a143702aa08a1714abe5014675761b45, type: 3}
+      propertyPath: tfBulletSpawn
+      value: 
+      objectReference: {fileID: 1799426466}
     - target: {fileID: 9137304351597503273, guid: a143702aa08a1714abe5014675761b45, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8

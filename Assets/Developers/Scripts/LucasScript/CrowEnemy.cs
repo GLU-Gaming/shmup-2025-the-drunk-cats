@@ -9,9 +9,17 @@ public class CrowEnemy : MonoBehaviour
 
     [SerializeField] Transform tfCrow;
 
+    [SerializeField] GameObject bullet;
+
+    [SerializeField] Transform tfBulletSpawn;
+
     private Transform player;
 
     private float healthCrow = 3f;
+
+    private float timerCrow;
+
+    private bool dashPlayer;
     void Start()
     {
 
@@ -27,6 +35,8 @@ public class CrowEnemy : MonoBehaviour
 
         CheckHealth();
 
+        ShootFeather();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,6 +50,7 @@ public class CrowEnemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            dashPlayer = true;
 
             player = other.GetComponent<Transform>();
 
@@ -89,4 +100,19 @@ public class CrowEnemy : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
     }    
+
+    private void ShootFeather()
+    {
+        timerCrow += Time.deltaTime;
+
+        if (timerCrow >= 1f && !dashPlayer)
+        {
+            timerCrow = 0f;
+
+            Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
+        }
+
+
+    }
+
 }
