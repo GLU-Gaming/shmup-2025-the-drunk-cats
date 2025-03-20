@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class CrowEnemy : MonoBehaviour
@@ -9,9 +10,21 @@ public class CrowEnemy : MonoBehaviour
 
     [SerializeField] Transform tfCrow;
 
+    [SerializeField] GameObject bullet;
+
+    [SerializeField] Transform tfBulletSpawn;
+
     private Transform player;
 
     private float healthCrow = 3f;
+
+    private float timerCrow;
+
+    private float dashTimer;    
+
+    private bool dashPlayer;
+
+    private bool lockedOn;
     void Start()
     {
 
@@ -27,25 +40,51 @@ public class CrowEnemy : MonoBehaviour
 
         CheckHealth();
 
+        ShootFeather();
+
+        if (lockedOn)
+        { 
+        
+            dashTimer += Time.deltaTime;
+
+            if (dashTimer <= 1.3f)
+            {
+
+                ChangeDirection();
+
+            }
+       
+        }
+
+        if (dashTimer >= 1f)
+        {
+
+            DashToPlayer();
+
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-    
 
             Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
+        //If the Sphere collider has detected an object with the tag Player activate dash.
         if (other.CompareTag("Player"))
         {
+            dashPlayer = true;
+
+            lockedOn = true;
 
             player = other.GetComponent<Transform>();
 
-            ChangeDirection();
-
-            DashToPlayer();
+            rbCrow.linearVelocity = transform.right * 0;
 
         }
 
@@ -61,6 +100,7 @@ public class CrowEnemy : MonoBehaviour
     private void CheckHealth()
     {
 
+        //If statement is true destroy the gameObject.
         if (healthCrow <= 0)
         {
 
@@ -73,7 +113,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow = 15f;
+        speedCrow += 0.4f;
 
         MoveCrow();
 
@@ -89,4 +129,18 @@ public class CrowEnemy : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
     }    
+
+    private void ShootFeather()
+    {
+        timerCrow += Time.deltaTime;
+
+        if (timerCrow >= 1f && !dashPlayer)
+        {
+            timerCrow = 0f;
+
+            Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
+        }
+
+    }
+
 }
