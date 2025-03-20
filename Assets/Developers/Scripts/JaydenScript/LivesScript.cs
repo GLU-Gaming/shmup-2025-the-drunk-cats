@@ -15,6 +15,6 @@ public class LivesScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        livesText.text = "Lives: " + game.playerHealth.ToString();
+        livesText.text = "Health: " + game.playerHealth.ToString();
     }
 }
