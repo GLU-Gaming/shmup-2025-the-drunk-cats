@@ -47,7 +47,7 @@ public class CrowEnemy : MonoBehaviour
         
             dashTimer += Time.deltaTime;
 
-            if (dashTimer <= 3.5f)
+            if (dashTimer <= 1.3f)
             {
 
                 ChangeDirection();
@@ -113,7 +113,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow += 0.03f;
+        speedCrow += 0.4f;
 
         MoveCrow();
 
