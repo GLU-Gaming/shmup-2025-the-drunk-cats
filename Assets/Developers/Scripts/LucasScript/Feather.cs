@@ -12,24 +12,15 @@ public class Bullet : MonoBehaviour
     void Start()
     {
 
+        //Spawn with a velocity.
         rbBullet.linearVelocity = transform.right * -20f;
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.CompareTag("Player"))
-        {
-
-            Destroy(gameObject);
-
-        }
 
     }
 
     private void Update()
     {
 
+        //If bullet is alive more then 2 seconds destroy it.
         timer += Time.deltaTime;
 
         if (timer >= 2f)

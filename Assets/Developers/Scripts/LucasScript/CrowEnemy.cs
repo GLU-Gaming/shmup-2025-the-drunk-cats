@@ -41,13 +41,15 @@ public class CrowEnemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-    
 
             Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
+        //If the Sphere collider has detected an object with the tag Player activate dash.
         if (other.CompareTag("Player"))
         {
             dashPlayer = true;
