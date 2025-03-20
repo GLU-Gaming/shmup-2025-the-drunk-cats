@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class CrowEnemy : MonoBehaviour
@@ -19,7 +20,11 @@ public class CrowEnemy : MonoBehaviour
 
     private float timerCrow;
 
+    private float dashTimer;    
+
     private bool dashPlayer;
+
+    private bool lockedOn;
     void Start()
     {
 
@@ -36,6 +41,27 @@ public class CrowEnemy : MonoBehaviour
         CheckHealth();
 
         ShootFeather();
+
+        if (lockedOn)
+        { 
+        
+            dashTimer += Time.deltaTime;
+
+            if (dashTimer <= 3.5f)
+            {
+
+                ChangeDirection();
+
+            }
+       
+        }
+
+        if (dashTimer >= 1f)
+        {
+
+            DashToPlayer();
+
+        }
 
     }
 
@@ -54,11 +80,11 @@ public class CrowEnemy : MonoBehaviour
         {
             dashPlayer = true;
 
+            lockedOn = true;
+
             player = other.GetComponent<Transform>();
 
-            ChangeDirection();
-
-            DashToPlayer();
+            rbCrow.linearVelocity = transform.right * 0;
 
         }
 
@@ -87,7 +113,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow = 15f;
+        speedCrow += 0.03f;
 
         MoveCrow();
 
