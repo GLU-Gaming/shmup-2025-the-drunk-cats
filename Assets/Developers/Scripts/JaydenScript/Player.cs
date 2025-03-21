@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager game;
+    public GameObject strongAttack;
     private Renderer playerRenderer;
     private Collider playerCollider;
     public float speed = 10f;
@@ -37,10 +38,18 @@ public class Player : MonoBehaviour
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
+
+    public void specialMove()
+    {
+        Instantiate(strongAttack, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    }
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Q))
+            {
+            specialMove();
+            }
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
         {
             shoot();
