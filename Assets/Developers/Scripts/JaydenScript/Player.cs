@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,11 +14,13 @@ public class Player : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFireTime = 0f;
     [SerializeField] Rigidbody rb;
+    private Camera _camera;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRenderer = GetComponent<Renderer>();
         playerCollider = GetComponent<Collider>();
+        _camera = Camera.main;
     }
 
     public IEnumerator PlayerHit()
@@ -47,31 +50,48 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            {
+        {
             specialMove();
-            }
+        }
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
         {
             shoot();
             nextFireTime = Time.time + fireRate;
         }
     }
+
+    private void screenBorder()
+    {
+        Vector3 screenPosition = _camera.WorldToScreenPoint(transform.position);
+        Vector3 playerSize = playerRenderer.bounds.size;
+
+        Vector3 clampedScreenPosition = new Vector3(
+            Mathf.Clamp(screenPosition.x, 100, Screen.width - 100),
+            Mathf.Clamp(screenPosition.y, 100, Screen.height - 100),
+            screenPosition.z
+        );
+
+        transform.position = _camera.ScreenToWorldPoint(clampedScreenPosition);
+    }
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddRelativeForce(Vector3.up * speed);
-        } else if (Input.GetKey(KeyCode.S))
+        } 
+        else if (Input.GetKey(KeyCode.S))
         {
             rb.AddRelativeForce(Vector3.down * speed);
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddRelativeForce(Vector3.right * speed); 
-        } else if (Input.GetKey(KeyCode.A))
+        } 
+        else if (Input.GetKey(KeyCode.A))
         {
             rb.AddRelativeForce(Vector3.left * speed);
 
         }
+        screenBorder();
     }
 }
