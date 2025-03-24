@@ -6,7 +6,6 @@ public class RatEnemy : MonoBehaviour
     [SerializeField] Rigidbody rbRat;
     [SerializeField] Transform tfRat;
     [SerializeField] float speedRat;
-    [SerializeField] Transform positionRat;
     private float velocityRat;
     private RatState currentRatState;
     private enum RatState { Up, Down};
@@ -15,13 +14,29 @@ public class RatEnemy : MonoBehaviour
     {
         currentRatState = RatState.Up;
 
-        velocityRat = -0.5f;
+        velocityRat = -2f;
 
         ChangeHeight();
 
     }
 
     void Update()
+    {
+
+       DecideHeight();
+
+       ChangeDirection();
+
+    }
+
+    private void ChangeHeight()
+    {
+
+        rbRat.linearVelocity = (transform.up * (speedRat * 3f)) + (transform.right * velocityRat);
+        
+    }
+
+    private void DecideHeight()
     {
 
         if (currentRatState == RatState.Up)
@@ -48,10 +63,17 @@ public class RatEnemy : MonoBehaviour
 
     }
 
-    private void ChangeHeight()
+    private void ChangeDirection()
     {
-
-        rbRat.linearVelocity = (transform.up * (speedRat * 3f)) + (transform.right * velocityRat);
         
+        if (tfRat.position.x < -12f)
+        {
+            velocityRat = 2f;
+        }
+
+        if (tfRat.position.x > 12f)
+        {
+            velocityRat = -2f;
+        }
     }
 }
