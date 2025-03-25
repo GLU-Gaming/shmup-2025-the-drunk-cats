@@ -93,7 +93,7 @@ public class RatEnemy : MonoBehaviour
         
         if (tfRat.position.x < -12f)
         {
-            velocityRat = 2f;
+            velocityRat = 10f;
         }
 
         if (tfRat.position.x > 12f)
