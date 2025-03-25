@@ -34,6 +34,13 @@ public class RatEnemy : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        HealthUpdate();
+
+    }
+
     private void ChangeHeight()
     {
 
@@ -94,6 +101,27 @@ public class RatEnemy : MonoBehaviour
     {
 
         if (healthRat <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+    private void HealthUpdate()
+    {
+
+
+        if (CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (CompareTag("PlayerProjectile"))
+        {
+            healthRat -= 1f;
+        }
+
+        else if (CompareTag("PlayerSuperProjectile"))
         {
             Destroy(gameObject);
         }

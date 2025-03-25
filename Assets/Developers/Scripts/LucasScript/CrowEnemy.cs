@@ -1,4 +1,5 @@
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CrowEnemy : MonoBehaviour
@@ -68,8 +69,7 @@ public class CrowEnemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-            Destroy(gameObject);
-
+        HealthUpdate();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -139,6 +139,27 @@ public class CrowEnemy : MonoBehaviour
             timerCrow = 0f;
 
             Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
+        }
+
+    }
+
+    private void HealthUpdate()
+    {
+
+
+        if (CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (CompareTag("PlayerProjectile"))
+        {
+            healthCrow -= 1f;
+        }
+
+        else if (CompareTag("PlayerSuperProjectile"))
+        {
+            Destroy(gameObject);
         }
 
     }
