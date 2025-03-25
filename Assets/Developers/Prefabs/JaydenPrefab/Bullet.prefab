@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 0}
-  speed: 20
+  speed: 30
   rb: {fileID: 7135066610037254575}
 --- !u!96 &-2376846419570754441
 TrailRenderer:
