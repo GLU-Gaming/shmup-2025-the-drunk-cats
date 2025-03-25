@@ -147,11 +147,11 @@ public class CrowEnemy : MonoBehaviour
     {
         timerCrow += Time.deltaTime;
 
-        if (timerCrow >= 1f && !dashPlayer)
+        if (timerCrow >= 2f && !dashPlayer)
         {
             timerCrow = 0f;
 
-            Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
+            Instantiate(bullet, tfBulletSpawn.transform.position, new Quaternion());
         }
 
     }
