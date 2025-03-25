@@ -12,21 +12,6 @@ public class GameManager : MonoBehaviour
     {
         player = FindFirstObjectByType<Player>();
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Frog"))
-        {
-            StartCoroutine(player.PlayerHit());
-        }
-        else if (collision.gameObject.CompareTag("Crow"))
-        {
-            StartCoroutine(player.PlayerHit());
-        }
-        else if (collision.gameObject.CompareTag("Rat"))
-        {
-            StartCoroutine(player.PlayerHit());
-        }
-    }
 
     
     // Update is called once per frame

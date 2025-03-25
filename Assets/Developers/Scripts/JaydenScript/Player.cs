@@ -44,6 +44,22 @@ public class Player : MonoBehaviour
             renderer.enabled = enabled;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Frog"))
+        {
+            StartCoroutine(PlayerHit());
+        }
+        else if (collision.gameObject.CompareTag("Crow"))
+        {
+            StartCoroutine(PlayerHit());
+        }
+        else if (collision.gameObject.CompareTag("Rat"))
+        {
+            StartCoroutine(PlayerHit());
+        }
+    }
     public void shoot()
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
