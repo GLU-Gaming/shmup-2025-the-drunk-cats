@@ -10,6 +10,7 @@ public class RatEnemy : MonoBehaviour
     private RatState currentRatState;
     private enum RatState { Up, Down};
     private float timerRat;
+    private float healthRat = 3f;
     void Start()
     {
         currentRatState = RatState.Up;
@@ -26,6 +27,8 @@ public class RatEnemy : MonoBehaviour
        DecideHeight();
 
        ChangeDirection();
+
+        DestroyOnHeight();
 
     }
 
@@ -75,5 +78,23 @@ public class RatEnemy : MonoBehaviour
         {
             velocityRat = -2f;
         }
+    }
+
+    private void DestroyOnHeight()
+    {
+        if (tfRat.position.y >= 10f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void CheckHealth()
+    {
+
+        if (healthRat <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
