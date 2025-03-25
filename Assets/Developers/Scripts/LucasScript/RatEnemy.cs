@@ -37,7 +37,20 @@ public class RatEnemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        HealthUpdate();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+            healthRat -= 1f;
+        }
+
+        else if (collision.gameObject.CompareTag("PlayerSuperProjectile"))
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -107,24 +120,5 @@ public class RatEnemy : MonoBehaviour
 
     }
 
-    private void HealthUpdate()
-    {
 
-
-        if (CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
-        if (CompareTag("PlayerProjectile"))
-        {
-            healthRat -= 1f;
-        }
-
-        else if (CompareTag("PlayerSuperProjectile"))
-        {
-            Destroy(gameObject);
-        }
-
-    }
 }
