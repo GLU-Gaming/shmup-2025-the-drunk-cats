@@ -69,7 +69,20 @@ public class CrowEnemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        HealthUpdate();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+            healthCrow -= 1f;
+        }
+
+        else if (collision.gameObject.CompareTag("PlayerSuperProjectile"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,25 +156,5 @@ public class CrowEnemy : MonoBehaviour
 
     }
 
-    private void HealthUpdate()
-    {
-
-
-        if (CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
-        if (CompareTag("PlayerProjectile"))
-        {
-            healthCrow -= 1f;
-        }
-
-        else if (CompareTag("PlayerSuperProjectile"))
-        {
-            Destroy(gameObject);
-        }
-
-    }
 
 }
