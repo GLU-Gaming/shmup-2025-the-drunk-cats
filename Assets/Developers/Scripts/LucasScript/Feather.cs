@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField] Rigidbody rbBullet;
+    [SerializeField] Transform tfBullet;
 
     private float timer;
 
@@ -14,6 +15,7 @@ public class Bullet : MonoBehaviour
 
         //Spawn with a velocity.
         rbBullet.linearVelocity = transform.right * -20f;
+        tfBullet.rotation = new Quaternion(45, 0, 0, 0);
 
     }
 
