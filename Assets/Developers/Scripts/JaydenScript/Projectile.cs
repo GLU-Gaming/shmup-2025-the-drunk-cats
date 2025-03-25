@@ -16,15 +16,15 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Crow"))
         {
             game.playerScore += 10;
             Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Enemy"))
+        } else if (collision.gameObject.CompareTag("Frog"))
         {
             game.playerScore += +10;
             Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Enemy"))
+        } else if (collision.gameObject.CompareTag("Rat"))
         {
             game.playerScore += +10;
             Destroy(gameObject);
