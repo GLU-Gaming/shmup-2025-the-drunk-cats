@@ -14,7 +14,15 @@ public class GameManager : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("Frog"))
+        {
+            StartCoroutine(player.PlayerHit());
+        }
+        else if (collision.gameObject.CompareTag("Crow"))
+        {
+            StartCoroutine(player.PlayerHit());
+        }
+        else if (collision.gameObject.CompareTag("Rat"))
         {
             StartCoroutine(player.PlayerHit());
         }
