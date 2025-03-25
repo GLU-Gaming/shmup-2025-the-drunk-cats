@@ -24,11 +24,13 @@ public class RatEnemy : MonoBehaviour
     void Update()
     {
 
-       DecideHeight();
+        DecideHeight();
 
-       ChangeDirection();
+        ChangeDirection();
 
         DestroyOnHeight();
+
+        CheckHealth();
 
     }
 
