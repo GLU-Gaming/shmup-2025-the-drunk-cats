@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 19844678529503884}
   - component: {fileID: 6942672450674026041}
   - component: {fileID: -985248179955879887}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Feather
   m_TagString: Crow
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8861455783548402569}
   - component: {fileID: 4571099452857711853}
   - component: {fileID: 8933236713540038768}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

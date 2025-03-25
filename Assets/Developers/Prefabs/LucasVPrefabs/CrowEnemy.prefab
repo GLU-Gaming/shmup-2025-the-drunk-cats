@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 620033235059389984}
   - component: {fileID: 2570716058319034196}
   - component: {fileID: 6691292067131983011}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CrowEnemy
   m_TagString: Crow
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355366783787192375}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: BulletPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 6135760836465057891}
   - component: {fileID: 182972085732095336}
   - component: {fileID: 2042112444130636387}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CrowVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
