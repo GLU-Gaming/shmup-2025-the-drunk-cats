@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager game;
     public GameObject strongAttack;
-    private Renderer playerRenderer;
+    private Renderer[] renderers;
     private Collider playerCollider;
     public float speed = 10f;
     public GameObject bulletPrefab;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerRenderer = GetComponent<Renderer>();
+        renderers = GetComponentsInChildren<Renderer>();
         playerCollider = GetComponent<Collider>();
         _camera = Camera.main;
     }
@@ -30,12 +30,19 @@ public class Player : MonoBehaviour
         for (float i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.15f);
-            playerRenderer.enabled = false;
+            SetRenderersEnabled(false);
             yield return new WaitForSeconds(0.15f);
-            playerRenderer.enabled = true;
+            SetRenderersEnabled(true);
         }
         playerCollider.enabled = true;
+    }
 
+    private void SetRenderersEnabled(bool enabled)
+    {
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.enabled = enabled;
+        }
     }
     public void shoot()
     {
@@ -63,7 +70,7 @@ public class Player : MonoBehaviour
     private void screenBorder()
     {
         Vector3 screenPosition = _camera.WorldToScreenPoint(transform.position);
-        Vector3 playerSize = playerRenderer.bounds.size;
+        Vector3 playerSize = renderers[0].bounds.size;
 
         Vector3 clampedScreenPosition = new Vector3(
             Mathf.Clamp(screenPosition.x, 100, Screen.width - 100),
