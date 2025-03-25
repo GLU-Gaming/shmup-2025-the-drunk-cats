@@ -824,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 1410767717}
   strongAttack: {fileID: 5520045402626701728, guid: 14bde5386e9abcc4f86a02569cef60ae, type: 3}
-  speed: 17
+  speed: 20
   bulletPrefab: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
   bulletSpawnPoint: {fileID: 819086566}
   fireRate: 0.5

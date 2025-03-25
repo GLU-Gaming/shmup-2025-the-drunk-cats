@@ -14,20 +14,17 @@ public class SpecialMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Frog"))
+        if (collision.gameObject.CompareTag("Crow"))
         {
             game.playerScore += 10;
-            Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Crow"))
+        else if (collision.gameObject.CompareTag("Frog"))
         {
             game.playerScore += 10;
-            Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Rat"))
         {
             game.playerScore += 10;
-            Destroy(gameObject);
         }
     }
 
@@ -35,5 +32,9 @@ public class SpecialMove : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

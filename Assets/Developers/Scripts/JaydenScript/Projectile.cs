@@ -20,11 +20,13 @@ public class Projectile : MonoBehaviour
         {
             game.playerScore += 10;
             Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Frog"))
+        } 
+        else if (collision.gameObject.CompareTag("Frog"))
         {
             game.playerScore += +10;
             Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Rat"))
+        } 
+        else if (collision.gameObject.CompareTag("Rat"))
         {
             game.playerScore += +10;
             Destroy(gameObject);
