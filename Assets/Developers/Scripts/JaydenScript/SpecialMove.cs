@@ -28,6 +28,7 @@ public class SpecialMove : MonoBehaviour
         }
     }
 
+    public
     // Update is called once per frame
     void Update()
     {

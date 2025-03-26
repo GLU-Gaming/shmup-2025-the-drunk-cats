@@ -72,9 +72,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (game.specialMoveValue >= 50)
         {
-            specialMove();
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                specialMove();
+                game.specialMoveValue = 0;
+            }
         }
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
         {
