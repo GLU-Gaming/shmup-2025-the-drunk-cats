@@ -31,6 +31,8 @@ public class CrowEnemy : MonoBehaviour
 
         MoveCrow();
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
     }
 
 
@@ -143,17 +145,22 @@ public class CrowEnemy : MonoBehaviour
 
     private void ShootFeather()
     {
-        if (lockedOn)
-        {
+        
+        
             timerCrow += Time.deltaTime;
 
-            if (timerCrow >= 0.5f && dashPlayer)
+            if (timerCrow >= 2f && !dashPlayer)
             {
-                timerCrow = 0f;
+                timerCrow = 0;
+
+                Vector3 direction = player.position - transform.position;
+
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                tfBulletSpawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
                 Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
             }
-        }
 
 
 
