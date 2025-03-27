@@ -70,6 +70,7 @@ public class PauseGame : MonoBehaviour
     }
     public void BackToPause()
     {
+        quitMenuUI.SetActive(false);
         retryMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
