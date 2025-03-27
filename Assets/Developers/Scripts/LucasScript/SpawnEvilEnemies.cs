@@ -8,7 +8,7 @@ public class SpawnEvilEnemies : MonoBehaviour
     private float xRat;
     private float yRat;
 
-    private float timer;
+    [SerializeField] float timer;
 
     [SerializeField] GameObject[] evilEnemies;
     void Start()
@@ -30,9 +30,9 @@ public class SpawnEvilEnemies : MonoBehaviour
     private void SpawnEnemies()
     {
         xCrow = Random.Range(12f, 14f);
-        yCrow = Random.Range(-5f, 5f);
+        yCrow = Random.Range(-4f, 4f);
         xRat = Random.Range(12f, 14f);
-        yRat = Random.Range(-6f, -8f);
+        yRat = Random.Range(-4f, -4f);
 
         Instantiate(evilEnemies[0], new Vector3(xCrow, yCrow, 0), Quaternion.identity);
         Instantiate(evilEnemies[1], new Vector3(xRat, yRat, 0), Quaternion.identity);
