@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     {
 
         //Spawn with a velocity.
-        rbBullet.linearVelocity = transform.right * -20f;
+        rbBullet.linearVelocity = transform.right * -10f;
         tfBullet.rotation = new Quaternion(45, 0, 0, 0);
 
     }

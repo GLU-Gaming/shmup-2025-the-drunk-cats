@@ -18,16 +18,19 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Crow"))
         {
             game.playerScore += 10;
+            game.specialMoveValue += 5;
             Destroy(gameObject);
         } 
         else if (collision.gameObject.CompareTag("Frog"))
         {
             game.playerScore += +10;
+            game.specialMoveValue += 5;
             Destroy(gameObject);
         } 
         else if (collision.gameObject.CompareTag("Rat"))
         {
             game.playerScore += +10;
+            game.specialMoveValue += 5;
             Destroy(gameObject);
         }
     }
