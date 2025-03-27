@@ -8,14 +8,24 @@ public class Bullet : MonoBehaviour
 
     private float timer;
 
+    private Transform player;
+
 
 
     void Start()
     {
 
         //Spawn with a velocity.
-        rbBullet.linearVelocity = transform.right * -10f;
-        tfBullet.rotation = new Quaternion(45, 0, 0, 0);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        rbBullet.linearVelocity = transform.right * -7f;
+
+        Vector3 direction = player.position - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        tfBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+
 
     }
 

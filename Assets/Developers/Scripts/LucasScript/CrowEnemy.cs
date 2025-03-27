@@ -95,8 +95,6 @@ public class CrowEnemy : MonoBehaviour
 
             lockedOn = true;
 
-            player = other.GetComponent<Transform>();
-
             rbCrow.linearVelocity = transform.right * 0;
 
         }
