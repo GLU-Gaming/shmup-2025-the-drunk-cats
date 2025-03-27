@@ -143,14 +143,19 @@ public class CrowEnemy : MonoBehaviour
 
     private void ShootFeather()
     {
-        timerCrow += Time.deltaTime;
-
-        if (timerCrow >= 2f && !dashPlayer)
+        if (lockedOn)
         {
-            timerCrow = 0f;
+            timerCrow += Time.deltaTime;
 
-            Instantiate(bullet, tfBulletSpawn.transform.position, new Quaternion());
+            if (timerCrow >= 0.5f && dashPlayer)
+            {
+                timerCrow = 0f;
+
+                Instantiate(bullet, tfBulletSpawn.transform.position, tfBulletSpawn.transform.rotation);
+            }
         }
+
+
 
     }
 
