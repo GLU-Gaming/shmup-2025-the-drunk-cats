@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -9,8 +10,12 @@ public class WhaleBoss : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] GameObject laserWarn;
 
+    [SerializeField] GameObject minigunB;
+
     [SerializeField] Transform laserPoint;
     [SerializeField] Transform laserPointWarn;
+
+    [SerializeField] Transform minigun;
 
     private int laserA;
     private int laserAW;
@@ -18,12 +23,16 @@ public class WhaleBoss : MonoBehaviour
     private float laserPZ;
     private float laserPZW;
 
+    private float minigunPZ;
+
     private float laserTCD;
     private float laserTCDW;
 
     private int turnAmount;
 
-    private GameObject[] warningLasers = new GameObject[10]; 
+    private GameObject[] warningLasers = new GameObject[10];
+
+    [SerializeField] bool attackDecided = false;
 
     void Start()
     {
@@ -31,11 +40,23 @@ public class WhaleBoss : MonoBehaviour
 
         laserPZ = laserPoint.position.z;
         laserPZW = laserPointWarn.position.z;
+        minigunPZ = minigun.position.z;
     }
 
     void Update()
     {
-     CannonShoot();
+        if (attackDecided)
+        {
+
+            CannonShoot();
+        }
+
+
+        minigunPZ = Random.Range(0, 90);
+        minigun.transform.rotation = Quaternion.Euler(new Vector3(minigun.transform.rotation.x, minigun.transform.rotation.y, minigunPZ));
+        Instantiate(minigunB, minigun.position, minigun.rotation);
+
+
 
     }
 
