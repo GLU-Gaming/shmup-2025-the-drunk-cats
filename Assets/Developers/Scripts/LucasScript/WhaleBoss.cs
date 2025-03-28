@@ -21,10 +21,14 @@ public class WhaleBoss : MonoBehaviour
     private float laserTCD;
     private float laserTCDW;
 
+    private int turnAmount;
+
     private GameObject[] warningLasers = new GameObject[10]; 
 
     void Start()
     {
+        turnAmount = Random.Range(13, 16);
+
         laserPZ = laserPoint.position.z;
         laserPZW = laserPointWarn.position.z;
     }
@@ -46,6 +50,7 @@ public class WhaleBoss : MonoBehaviour
             laserTCDW = 0;
             laserA = 0;
             laserAW = 0;
+            turnAmount = Random.Range(13, 16);
             laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
         }
@@ -54,7 +59,7 @@ public class WhaleBoss : MonoBehaviour
         {
             GameObject warn = Instantiate(laserWarn, laserPointWarn.position, laserPointWarn.rotation);
             warningLasers[laserAW] = warn;
-            laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW -= 15f));
+            laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW -= turnAmount));
             laserAW++;
             laserTCDW = 0f;
         }
@@ -62,7 +67,7 @@ public class WhaleBoss : MonoBehaviour
         if (laserTCD >= 0.4f && laserA <= 5 && laserAW >= 4)
         {
             Instantiate(laser, laserPoint.position, laserPoint.rotation);
-            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ -= 15f));
+            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ -= turnAmount));
 
             if (warningLasers[laserA] != null)
             {
