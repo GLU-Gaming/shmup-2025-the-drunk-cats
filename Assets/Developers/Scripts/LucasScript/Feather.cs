@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Feather : MonoBehaviour
 {
 
     [SerializeField] Rigidbody rbBullet;
@@ -32,10 +32,10 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
 
-        //If bullet is alive more then 2 seconds destroy it.
+        //If bullet is alive more then 4 seconds destroy it.
         timer += Time.deltaTime;
 
-        if (timer >= 2f)
+        if (timer >= 4f)
         {
             Destroy(gameObject);
         }
