@@ -178,6 +178,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8762855471704505457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff67a4cbd37bbc740bf584696d482137, type: 3}
+  m_Script: {fileID: 11500000, guid: 848c2de7927c0404eb6424f22e6a5e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rbBullet: {fileID: 487767836889738501}
+  tfBullet: {fileID: 4363384838887835409}

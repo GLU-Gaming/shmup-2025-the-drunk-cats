@@ -32,10 +32,10 @@ public class Feather : MonoBehaviour
     private void Update()
     {
 
-        //If bullet is alive more then 2 seconds destroy it.
+        //If bullet is alive more then 4 seconds destroy it.
         timer += Time.deltaTime;
 
-        if (timer >= 2f)
+        if (timer >= 4f)
         {
             Destroy(gameObject);
         }
