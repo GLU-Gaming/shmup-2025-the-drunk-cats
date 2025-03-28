@@ -2,23 +2,21 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    
     [SerializeField] float speed = 1.0f;
-    Vector3 startPos;
-    Vector3 leftScreenBorder;
-    Vector3 screenBounds;
-    Renderer currentRenderer;
+    float leftScreenBorder;
+    Renderer[] renderers;
+    float totalWidth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Start pos initialiseren
-        startPos = transform.position;
-        //leftScreenBorder = Camera.main.ViewportToWorldPoint(new Vector3(5, 0, 0));
-        screenBounds = Camera.main.ScreenToWorldPoint(Vector3.zero);
-        
-        currentRenderer = GetComponent<Renderer>();
+        leftScreenBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
+        renderers = GetComponentsInChildren<Renderer>();
 
+        foreach (Renderer renderer in renderers)
+        {
+            totalWidth += renderer.bounds.size.x + 70;   
+        }
     }
 
     // Update is called once per frame
@@ -26,18 +24,17 @@ public class Background : MonoBehaviour
     {
         float dir = -1;
         transform.position += new Vector3(dir * speed * Time.deltaTime, 0, 0);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (screenPos.x < leftScreenBorder.x)
+        foreach (Renderer renderer in renderers)
         {
-            Debug.Log("Resetting!");
-            transform.position = startPos;
+            if (renderer.transform.position.x < leftScreenBorder - renderer.bounds.size.x)
+            {
+                Debug.Log("Resetting!");
+                renderer.transform.position += new Vector3(totalWidth, 0, 0);
+            }
         }
-
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(leftScreenBorder, new Vector3(20, 0, 10));
-    }
+
 }
+

@@ -10,6 +10,7 @@ TagManager:
   - Frog
   - Crow
   - Rat
+  - BombPickup
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - Enemy
-  - 
+  - Pickup
   - 
   - 
   - 

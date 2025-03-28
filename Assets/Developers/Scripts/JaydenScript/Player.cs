@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager game;
+    [SerializeField] private BombPickup bombPickup;
+    public bool pickupActivated = false;
+    public GameObject Pickup;
     public GameObject strongAttack;
     private Renderer[] renderers;
     private Collider playerCollider;
     public float speed = 10f;
+    public GameObject bombPrefab;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float fireRate = 0.5f;
@@ -58,6 +63,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PlayerHit());
         }
+
     }
     public void shoot()
     {
@@ -68,6 +74,13 @@ public class Player : MonoBehaviour
     {
         Instantiate(strongAttack, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
+
+    public void bomb()
+    {
+        Instantiate(bombPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        pickupActivated = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -84,6 +97,14 @@ public class Player : MonoBehaviour
             shoot();
             nextFireTime = Time.time + fireRate;
         }
+        if (pickupActivated == true)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                bomb();
+            }
+        }
+
     }
 
     private void screenBorder()
