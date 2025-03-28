@@ -33,7 +33,7 @@ public class WhaleBoss : MonoBehaviour
         laserTCD += Time.deltaTime;
         laserTCDW += Time.deltaTime;
 
-        if (laserTCDW >= 0.24f && laserAW <= 9)
+        if (laserTCDW >= 0.3f && laserAW <= 9)
         {
             GameObject warn = Instantiate(laserWarn, laserPointWarn.position, laserPointWarn.rotation);
             warningLasers[laserAW] = warn;
@@ -42,14 +42,14 @@ public class WhaleBoss : MonoBehaviour
             laserTCDW = 0f;
         }
 
-        if (laserTCD >= 0.36f && laserA <= 9 && laserAW >= 9)
+        if (laserTCD >= 0.4f && laserA <= 9 && laserAW >= 4)
         {
             Instantiate(laser, laserPoint.position, laserPoint.rotation);
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ -= 10f));
 
             if (warningLasers[laserA] != null) 
             {
-                Destroy(warningLasers[laserA], 0.1f); 
+                Destroy(warningLasers[laserA]); 
             }
 
             laserA++;
