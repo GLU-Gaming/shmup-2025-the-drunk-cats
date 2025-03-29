@@ -153,3 +153,5 @@ MonoBehaviour:
   rb: {fileID: 8592618926380639578}
   throwForce: 50
   throwUpForce: 20
+  radius: 50
+  force: 700

@@ -9,7 +9,7 @@ public class BombPickup : MonoBehaviour
     public GameObject Pickup;
     float waitTime;
     float minTime = 15f;
-    float maxTime = 30f;
+    float maxTime = 30;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

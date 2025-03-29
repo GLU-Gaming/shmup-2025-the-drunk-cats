@@ -124,7 +124,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow -= 0.4f;
+        speedCrow -= 0.3f;
 
         MoveCrow();
 
@@ -147,7 +147,7 @@ public class CrowEnemy : MonoBehaviour
         
             timerCrow += Time.deltaTime;
 
-            if (timerCrow >= 2f && !dashPlayer)
+            if (timerCrow >= 4f && !dashPlayer)
             {
                 timerCrow = 0;
 
