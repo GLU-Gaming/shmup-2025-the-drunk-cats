@@ -29,7 +29,6 @@ public class Background : MonoBehaviour
         {
             if (renderer.transform.position.x < leftScreenBorder - renderer.bounds.size.x)
             {
-                Debug.Log("Resetting!");
                 renderer.transform.position += new Vector3(totalWidth, 0, 0);
             }
         }

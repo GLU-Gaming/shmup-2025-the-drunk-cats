@@ -15,7 +15,7 @@ public class CrowEnemy : MonoBehaviour
 
     private Transform player;
 
-    private float healthCrow = 3f;
+    private float healthCrow = 4f;
 
     private float timerCrow;
 
@@ -23,16 +23,23 @@ public class CrowEnemy : MonoBehaviour
 
     private bool dashPlayer;
 
+    private SpawnEvilEnemies spawnManager;
+
+    private float leftBoundary = -15f;
+    private float topBoundary = 10f;
+    private float bottomBoundary = -10f;
+
     private bool lockedOn;
     void Start()
     {
 
-        speedCrow = -1.5f;
+        speedCrow = -1f;
 
         MoveCrow();
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        spawnManager = FindFirstObjectByType<SpawnEvilEnemies>();
     }
 
 
@@ -42,6 +49,8 @@ public class CrowEnemy : MonoBehaviour
         CheckHealth();
 
         ShootFeather();
+
+        DestroyCrow();
 
         if (lockedOn)
         { 
@@ -71,7 +80,7 @@ public class CrowEnemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            RemoveCrow();
         }
 
         if (collision.gameObject.CompareTag("PlayerProjectile"))
@@ -81,7 +90,7 @@ public class CrowEnemy : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("PlayerSuperProjectile"))
         {
-            Destroy(gameObject);
+            RemoveCrow();
         }
     }
 
@@ -115,7 +124,7 @@ public class CrowEnemy : MonoBehaviour
         if (healthCrow <= 0)
         {
 
-            Destroy(gameObject);
+            RemoveCrow();
 
         }
 
@@ -124,11 +133,20 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow -= 0.3f;
+        speedCrow -= 0.1f;
 
         MoveCrow();
 
     }
+
+    private void DestroyCrow()
+    {
+        if (tfCrow.position.x < leftBoundary || tfCrow.position.y < bottomBoundary || tfCrow.position.y > topBoundary)
+        {
+            RemoveCrow();
+        }
+    }
+
 
     private void ChangeDirection()
     {
@@ -147,7 +165,7 @@ public class CrowEnemy : MonoBehaviour
         
             timerCrow += Time.deltaTime;
 
-            if (timerCrow >= 4f && !dashPlayer)
+            if (timerCrow >= 5f && !dashPlayer)
             {
                 timerCrow = 0;
 
@@ -163,6 +181,13 @@ public class CrowEnemy : MonoBehaviour
 
 
     }
-
+    private void RemoveCrow()
+    {
+        if (spawnManager != null)
+        {
+            spawnManager.RemoveEnemy(gameObject);
+        }
+        Destroy(gameObject);
+    }
 
 }

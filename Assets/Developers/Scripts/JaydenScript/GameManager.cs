@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private Player player;
-    public int playerHealth = 3;
+    public int playerHealth = 10;
     public int playerScore = 0;
     public int specialMoveValue = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

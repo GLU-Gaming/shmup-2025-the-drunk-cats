@@ -10,7 +10,8 @@ public class RatEnemy : MonoBehaviour
     private RatState currentRatState;
     private enum RatState { Up, Down};
     private float timerRat;
-    private float healthRat = 3f;
+    private float healthRat = 4f;
+    private SpawnEvilEnemies spawnManager;
     void Start()
     {
         currentRatState = RatState.Up;
@@ -18,6 +19,8 @@ public class RatEnemy : MonoBehaviour
         velocityRat = -2f;
 
         ChangeHeight();
+
+        spawnManager = FindFirstObjectByType<SpawnEvilEnemies>();
 
     }
 
@@ -39,17 +42,17 @@ public class RatEnemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            RemoveRat();
         }
 
         if (collision.gameObject.CompareTag("PlayerProjectile"))
         {
-            healthRat -= 1f;
+            healthRat--;
         }
 
         else if (collision.gameObject.CompareTag("PlayerSuperProjectile"))
         {
-            Destroy(gameObject);
+            RemoveRat();
         }
 
     }
@@ -106,7 +109,7 @@ public class RatEnemy : MonoBehaviour
     {
         if (tfRat.position.y >= 10f)
         {
-            Destroy(gameObject);
+            RemoveRat();
         }
     }
 
@@ -115,10 +118,17 @@ public class RatEnemy : MonoBehaviour
 
         if (healthRat <= 0)
         {
-            Destroy(gameObject);
+            RemoveRat();
         }
 
     }
-
+    private void RemoveRat()
+    {
+        if (spawnManager != null)
+        {
+            spawnManager.RemoveEnemy(gameObject);
+        }
+        Destroy(gameObject);
+    }
 
 }
