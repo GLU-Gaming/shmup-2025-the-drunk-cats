@@ -7,10 +7,11 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour
 {
     private Player player;
-    public GameObject Pickup;
+    public GameObject pickup;
+    public GameObject lifePickup;
     float waitTime;
-    float minTime = 1f;
-    float maxTime = 10f;
+    float minTime = 15f;
+    float maxTime = 30f;
     public int playerHealth = 10;
     public int playerScore = 0;
     public int specialMoveValue = 0;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindFirstObjectByType<Player>();
         StartCoroutine(SpawnPickup());
+        StartCoroutine(SpawnLifePickup());
     }
 
     private IEnumerator SpawnPickup()
@@ -29,7 +31,18 @@ public class GameManager : MonoBehaviour
             Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
             waitTime = Random.Range(minTime, maxTime);
             yield return new WaitForSeconds(waitTime);
-            Instantiate(Pickup, spawnLocation, Quaternion.identity);
+            Instantiate(pickup, spawnLocation, Quaternion.identity);
+        }
+    }
+
+    private IEnumerator SpawnLifePickup()
+    {
+        while (true)
+        {
+            Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
+            waitTime = Random.Range(minTime, maxTime);
+            yield return new WaitForSeconds(waitTime);
+            Instantiate(lifePickup, spawnLocation, Quaternion.identity);
         }
     }
 

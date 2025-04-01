@@ -24,8 +24,11 @@ public class SpawnEvilEnemies : MonoBehaviour
     {
         if (spawnedEnemies.Count == 0 && round == 2)
         {
-            StartCoroutine(Round1());
-            round++;
+            StartCoroutine(Round2());
+        }
+        if (spawnedEnemies.Count == 0 && round == 2)
+        {
+            StartCoroutine(Round2());
         }
     }
     private IEnumerator Round1()

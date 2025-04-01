@@ -40,12 +40,7 @@ public class Bomb : MonoBehaviour
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
-
-            // Optionally, you can add logic to damage or destroy nearby objects
-            if (nearbyObject.CompareTag("Crow") || nearbyObject.CompareTag("Frog") || nearbyObject.CompareTag("Rat"))
-            {
                 Destroy(nearbyObject.gameObject);
-            }
         }
 
         Destroy(gameObject);
