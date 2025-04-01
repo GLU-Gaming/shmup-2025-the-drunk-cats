@@ -1,5 +1,3 @@
-using Mono.Cecil;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WhaleBoss : MonoBehaviour
