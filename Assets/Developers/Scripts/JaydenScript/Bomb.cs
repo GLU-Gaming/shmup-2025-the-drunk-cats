@@ -11,6 +11,7 @@ public class Bomb : MonoBehaviour
     public float throwUpForce = 1f;
     public float radius = 1f;
     public float force = 200f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,16 +28,29 @@ public class Bomb : MonoBehaviour
             Explode();
         }
     }
+
     public void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider nearbyObject in colliders)
         {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddExplosionForce(force, transform.position, radius);
+            }
 
+            // Optionally, you can add logic to damage or destroy nearby objects
+            if (nearbyObject.CompareTag("Crow") || nearbyObject.CompareTag("Frog") || nearbyObject.CompareTag("Rat"))
+            {
+                Destroy(nearbyObject.gameObject);
+            }
         }
+
         Destroy(gameObject);
     }
+
     // Update is called once per frame
     void Update()
     {

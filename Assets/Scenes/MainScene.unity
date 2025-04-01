@@ -2025,6 +2025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352513194ee5e444ebf3f353fdc3aaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pickup: {fileID: 2203238991044067597, guid: d869c0edca5a86048b8a9063e8797d12, type: 3}
   playerHealth: 10
   playerScore: 0
   specialMoveValue: 0

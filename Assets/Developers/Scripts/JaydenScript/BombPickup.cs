@@ -8,8 +8,9 @@ public class BombPickup : MonoBehaviour
     public Player player;
     public GameObject Pickup;
     float waitTime;
-    float minTime = 15f;
-    float maxTime = 30;
+    float minTime = 1f;
+    float maxTime = 10f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,10 +20,13 @@ public class BombPickup : MonoBehaviour
 
     private IEnumerator SpawnPickup()
     {
-        Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(4, -2), 0);
-        waitTime = Random.Range(minTime, maxTime);
-        yield return new WaitForSeconds(waitTime);
-        Instantiate(Pickup, spawnLocation, transform.rotation);
+        while (true)
+        {
+            Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
+            waitTime = Random.Range(minTime, maxTime);
+            yield return new WaitForSeconds(waitTime);
+            Instantiate(Pickup, spawnLocation, Quaternion.identity);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,9 +37,10 @@ public class BombPickup : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
