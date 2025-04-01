@@ -28,6 +28,12 @@ public class WhaleBoss : MonoBehaviour
     private float laserTCD;
     private float laserTCDW;
 
+    private float minigunTCD;
+
+    private float minigunC = 0.07f;
+
+    [SerializeField] float minigunSU;
+
     private int turnAmount;
 
     private GameObject[] warningLasers = new GameObject[10];
@@ -51,12 +57,23 @@ public class WhaleBoss : MonoBehaviour
             CannonShoot();
         }
 
+        minigunTCD += Time.deltaTime;
 
-        minigunPZ = Random.Range(0, 90);
-        minigun.transform.rotation = Quaternion.Euler(new Vector3(minigun.transform.rotation.x, minigun.transform.rotation.y, minigunPZ));
-        Instantiate(minigunB, minigun.position, minigun.rotation);
+        if (minigunTCD >= minigunC)
+        {
 
+            minigunPZ = Random.Range(0, 90);
+            minigun.transform.rotation = Quaternion.Euler(new Vector3(minigun.transform.rotation.x, minigun.transform.rotation.y, minigunPZ));
+            Instantiate(minigunB, minigun.position, minigun.rotation);
+            minigunTCD = 0f;
+            minigunSU++;
+        }
 
+        if (minigunSU >= 15)
+        {
+            minigunC -= 0.01f;
+            minigunSU = 0;
+        }
 
     }
 
