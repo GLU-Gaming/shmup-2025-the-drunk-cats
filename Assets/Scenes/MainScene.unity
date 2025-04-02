@@ -1476,6 +1476,14 @@ PrefabInstance:
       propertyPath: rbFrog
       value: 
       objectReference: {fileID: 634746838}
+    - target: {fileID: 6133912261432603105, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
+      propertyPath: frogEnemy
+      value: 
+      objectReference: {fileID: 634746832}
+    - target: {fileID: 6133912261432603105, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1777,8 +1785,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
