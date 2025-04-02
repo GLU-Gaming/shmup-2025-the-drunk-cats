@@ -26,6 +26,8 @@ public class WhaleBoss : MonoBehaviour
     private float laserTCD;
     private float laserTCDW;
 
+    [SerializeField] int laserAmount;
+
     private float minigunTCD;
 
     [SerializeField] float minigunC = 0.07f;
@@ -126,19 +128,19 @@ public class WhaleBoss : MonoBehaviour
 
         }
 
-        if (laserAW >= 6 && laserA >= 6)
+        if (laserAW >= laserAmount && laserA >= laserAmount)
         {
             laserTCD = 0;
             laserTCDW = 0;
             laserA = 0;
             laserAW = 0;
-            turnAmount = Random.Range(13, 16);
+            turnAmount = Random.Range(5, 20);
             laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
-            attackType = AttackType.None;
+            //attackType = AttackType.None;
         }
 
-        if (laserTCDW >= 0.2f && laserAW <= 5)
+        if (laserTCDW >= 0.1f && laserAW <= laserAmount - 1)
         {
             GameObject warn = Instantiate(laserWarn, laserPointWarn.position, laserPointWarn.rotation);
             warningLasers[laserAW] = warn;
@@ -147,7 +149,7 @@ public class WhaleBoss : MonoBehaviour
             laserTCDW = 0f;
         }
 
-        if (laserTCD >= 0.4f && laserA <= 5 && laserAW >= 4)
+        if (laserTCD >= 0.2f && laserA <= laserAmount - 1 && laserAW >= 4)
         {
             Instantiate(laser, laserPoint.position, laserPoint.rotation);
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ -= turnAmount));
