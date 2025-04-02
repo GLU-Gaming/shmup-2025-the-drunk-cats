@@ -114,8 +114,6 @@ public class WhaleBoss : MonoBehaviour
             laserA = 0;
             laserAW = 0;
             turnAmount = Random.Range(13, 16);
-            laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
-            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
 
         }
 
