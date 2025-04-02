@@ -100,6 +100,12 @@ public class WhaleBoss : MonoBehaviour
             minigunC -= 0.01f;
             minigunSU = 0;
         }
+
+        if (minigunC <= 0f)
+        {
+            minigunC = 0;
+            attackType = AttackType.None;
+        }
     }
 
     private void CannonShoot()
@@ -126,6 +132,7 @@ public class WhaleBoss : MonoBehaviour
             turnAmount = Random.Range(13, 16);
             laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
+            attackType = AttackType.None;
         }
 
         if (laserTCDW >= 0.2f && laserAW <= 5)
