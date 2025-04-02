@@ -28,7 +28,7 @@ public class WhaleBoss : MonoBehaviour
 
     private float minigunTCD;
 
-    private float minigunC = 0.07f;
+    [SerializeField] float minigunC = 0.07f;
 
     [SerializeField] float minigunSU;
 
@@ -81,6 +81,7 @@ public class WhaleBoss : MonoBehaviour
 
         if (attackType != AttackType.Minigun)
         {
+            minigunSU = 0;
             minigunC = 0.07f;
             minigunTCD = 0f;
         }
@@ -103,7 +104,9 @@ public class WhaleBoss : MonoBehaviour
 
         if (minigunC <= 0f)
         {
-            minigunC = 0;
+            minigunSU = 0;
+            minigunC = 0.07f;
+            minigunTCD = 0f;
             attackType = AttackType.None;
         }
     }
