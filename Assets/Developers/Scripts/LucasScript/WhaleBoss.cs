@@ -137,7 +137,7 @@ public class WhaleBoss : MonoBehaviour
             turnAmount = Random.Range(5, 20);
             laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
             laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
-            //attackType = AttackType.None;
+            attackType = AttackType.None;
         }
 
         if (laserTCDW >= 0.1f && laserAW <= laserAmount - 1)
