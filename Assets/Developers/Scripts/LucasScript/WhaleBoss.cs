@@ -36,7 +36,9 @@ public class WhaleBoss : MonoBehaviour
 
     private GameObject[] warningLasers = new GameObject[10];
 
-    [SerializeField] bool attackDecided = false;
+    [SerializeField] enum AttackType { Laser, Minigun, None };
+
+    [SerializeField] AttackType attackType;
 
     void Start()
     {
@@ -49,13 +51,39 @@ public class WhaleBoss : MonoBehaviour
 
     void Update()
     {
-        if (attackDecided)
+        if (attackType == AttackType.Laser)
         {
 
+            tfWhale.position = new Vector3(tfWhale.position.x, -6f, tfWhale.position.z);
             CannonShoot();
         }
 
+        else if (attackType == AttackType.Minigun)
+        {
+
+            tfWhale.position = new Vector3(tfWhale.position.x, 7f, tfWhale.position.z);
+            MinigunShoot();
+
+        }
+
+        else
+        {
+
+            tfWhale.position = new Vector3(tfWhale.position.x, 0f, tfWhale.position.z);
+
+        }
+
+    }
+
+    private void MinigunShoot()
+    {
         minigunTCD += Time.deltaTime;
+
+        if (attackType != AttackType.Minigun)
+        {
+            minigunC = 0.07f;
+            minigunTCD = 0f;
+        }
 
         if (minigunTCD >= minigunC)
         {
@@ -72,13 +100,24 @@ public class WhaleBoss : MonoBehaviour
             minigunC -= 0.01f;
             minigunSU = 0;
         }
-
     }
 
     private void CannonShoot()
     {
         laserTCD += Time.deltaTime;
         laserTCDW += Time.deltaTime;
+
+        if (attackType != AttackType.Laser)
+        {
+            laserTCD = 0f;
+            laserTCDW = 0f;
+            laserA = 0;
+            laserAW = 0;
+            turnAmount = Random.Range(13, 16);
+            laserPointWarn.transform.rotation = Quaternion.Euler(new Vector3(laserPointWarn.transform.rotation.x, laserPointWarn.transform.rotation.y, laserPZW = 0f));
+            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(laserPoint.transform.rotation.x, laserPoint.transform.rotation.y, laserPZ = 0f));
+
+        }
 
         if (laserAW >= 6 && laserA >= 6)
         {

@@ -564,7 +564,7 @@ Transform:
   m_GameObject: {fileID: 1310927950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 7, z: 0}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -621,7 +621,8 @@ MonoBehaviour:
   laserPoint: {fileID: 1207063782}
   laserPointWarn: {fileID: 1142678137}
   minigun: {fileID: 1918188140}
-  attackDecided: 0
+  minigunSU: 0
+  attackType: 0
 --- !u!1001 &1370546104
 PrefabInstance:
   m_ObjectHideFlags: 0
