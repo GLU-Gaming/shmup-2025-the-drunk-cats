@@ -15,6 +15,7 @@ public class RailCannon : MonoBehaviour
     private bool laserDone = false;
 
     private GameObject warningLaser;
+    private GameObject laserShoot;
 
     private Transform player;
 
@@ -30,8 +31,22 @@ public class RailCannon : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        RailCannonShoot();
+        if (other.CompareTag("Player"))
+        {
+            RailCannonShoot();
 
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            laserDone = true;
+            Destroy(laserShoot);
+            Destroy(warningLaser);
+        }
     }
     private void RailCannonShoot()
     {
@@ -78,7 +93,8 @@ public class RailCannon : MonoBehaviour
         {
             if (!laserFired)
             {
-                Instantiate(laser, laserPoint.position, laserPoint.rotation);
+                GameObject warn = Instantiate(laser, laserPoint.position, laserPoint.rotation);
+                laserShoot = warn;
 
                 laserFired = true;
             }
@@ -88,9 +104,9 @@ public class RailCannon : MonoBehaviour
                 Destroy(warningLaser);
             }
 
-            if (laserTCD >= 10f)
+            if (laserTCD >= 9.2f && laserShoot != null)
             {
-
+                Destroy(laserShoot);
                 laserDone = true;
 
             }
