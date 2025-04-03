@@ -621,6 +621,8 @@ MonoBehaviour:
   laserPoint: {fileID: 1207063782}
   laserPointWarn: {fileID: 1142678137}
   minigun: {fileID: 1918188140}
+  laserAmount: 10
+  minigunC: 0.07
   minigunSU: 0
   attackType: 0
 --- !u!1001 &1370546104
@@ -631,6 +633,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5111818444199128001, guid: e0366761224065b458a9ea803d726631, type: 3}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 697383294269608653, guid: 7cd5f5b8096fc7e47a90b7f1ac38777f, type: 3}
+    - target: {fileID: 5111818444199128001, guid: e0366761224065b458a9ea803d726631, type: 3}
+      propertyPath: lifePickup
+      value: 
+      objectReference: {fileID: 697383294269608653, guid: 7cd5f5b8096fc7e47a90b7f1ac38777f, type: 3}
     - target: {fileID: 7083733028068338574, guid: e0366761224065b458a9ea803d726631, type: 3}
       propertyPath: m_Name
       value: GameManager

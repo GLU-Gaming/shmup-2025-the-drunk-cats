@@ -155,3 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogTongue: {fileID: 8680245223527785843, guid: 342aa0945f51e2647a77d29792bfc9d4, type: 3}
   frogBulletSpawn: {fileID: 959060998893582804}
+  scaleDuration: 0.5
+  moveSpeed: 2
+  frogEnemy: {fileID: 4175031752449436526}
