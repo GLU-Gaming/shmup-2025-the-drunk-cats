@@ -10,7 +10,7 @@ public class Laser : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 3f)
+        if (timer >= 4.2f)
         {
             Destroy(gameObject);
         }

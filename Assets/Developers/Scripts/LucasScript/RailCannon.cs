@@ -88,7 +88,7 @@ public class RailCannon : MonoBehaviour
                 Destroy(warningLaser);
             }
 
-            if (laserTCD >= 10f)
+            if (laserTCD >= 16f)
             {
 
                 laserDone = true;
