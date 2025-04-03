@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using NUnit.Framework;
 
 public class SpawnEvilEnemies : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class SpawnEvilEnemies : MonoBehaviour
     private float yRat;
     private float xFrog;
     private float yFrog;
-    private int round = 1;
+    public int round = 1;
+    bool roundIsBusy = false;
 
     [SerializeField] GameObject[] evilEnemies;
     public List<GameObject> spawnedEnemies;
@@ -19,24 +21,37 @@ public class SpawnEvilEnemies : MonoBehaviour
     void Start()
     {
         spawnedEnemies = new List<GameObject>();
-        StartCoroutine(Round1());
+        //StartCoroutine(Round1());
+        StartCoroutine(Round(8, 0, 0));
     }
 
     void Update()
     {
-        if (spawnedEnemies.Count == 0 && round == 2)
+        if (spawnedEnemies.Count == 0)
         {
-            StartCoroutine(Round2());
-        }
-        if (spawnedEnemies.Count == 0 && round == 2)
-        {
-            StartCoroutine(Round2());
+            if (round == 2 && !roundIsBusy)
+            {
+                StartCoroutine(Round(10, 0, 0));
+            }
+            if (round == 3 && !roundIsBusy)
+            {
+                StartCoroutine(Round(10, 5, 0));
+            }
+            //else if (round == 3)
+            //{
+            //    StartCoroutine(Round3());
+            //}
+            //else if (round == 4)
+            //{
+            //    StartCoroutine(Round4());
+            //}
         }
     }
-    private IEnumerator Round1()
-    {
 
-        for (int crowAmount = 0; crowAmount < 5; crowAmount++)
+    private IEnumerator Round(int crowAmount, int ratAmount, int frogAmount)
+    {
+        roundIsBusy = true;
+        for (int i = 0; i < crowAmount; i++)
         {
             yield return new WaitForSeconds(1f);
             xCrow = Random.Range(12f, 14f);
@@ -44,37 +59,26 @@ public class SpawnEvilEnemies : MonoBehaviour
             GameObject crow = Instantiate(evilEnemies[0], new Vector3(xCrow, yCrow, 0), Quaternion.identity);
             spawnedEnemies.Add(crow);
         }
-        round++;
-        for (int frogAmount = 0; frogAmount < 1; frogAmount++)
+
+        for (int i = 0; i < ratAmount; i++)
+        {
+            yield return new WaitForSeconds(0.8f);
+            xRat = Random.Range(12f, 14f);
+            yRat = Random.Range(-4f, -4f);
+            GameObject rat = Instantiate(evilEnemies[1], new Vector3(xRat, yRat, 0), Quaternion.identity);
+            spawnedEnemies.Add(rat);
+        }
+
+        for (int i = 0; i < frogAmount; i++)
         {
             yield return new WaitForSeconds(2f);
             xFrog = Random.Range(12f, 14f);
             yFrog = Random.Range(-4f, 4f);
-            GameObject Frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.identity);
-            spawnedEnemies.Add(Frog);
+            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.identity);
+            spawnedEnemies.Add(frog);
         }
-    }
-
-    private IEnumerator Round2()
-    {
-        Debug.Log("Round 2");
-        yield return new WaitForSeconds(2f);
-        for (int crowAmount = 0; crowAmount < 5; crowAmount++)
-        {
-            yield return new WaitForSeconds(2f);
-            xCrow = Random.Range(12f, 14f);
-            yCrow = Random.Range(-4f, 4f);
-            GameObject crow = Instantiate(evilEnemies[0], new Vector3(xCrow, yCrow, 0), Quaternion.identity);
-            spawnedEnemies.Add(crow);
-        }
-        for (int crowAmount = 0; crowAmount < 5; crowAmount++)
-        {
-            yield return new WaitForSeconds(2f);
-            xCrow = Random.Range(12f, 14f);
-            yCrow = Random.Range(-4f, 4f);
-            GameObject crow = Instantiate(evilEnemies[0], new Vector3(xCrow, yCrow, 0), Quaternion.identity);
-            spawnedEnemies.Add(crow);
-        }
+        round++;
+        roundIsBusy = false;
     }
 
     public void RemoveEnemy(GameObject enemy)

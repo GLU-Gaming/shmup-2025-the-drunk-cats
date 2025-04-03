@@ -1469,6 +1469,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4175031752449436526, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175031752449436526, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
       propertyPath: m_TagString
       value: Frog
       objectReference: {fileID: 0}

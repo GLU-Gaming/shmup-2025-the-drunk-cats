@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7515330690322958177}
   m_Layer: 7
   m_Name: Bomb
-  m_TagString: BombPickup
+  m_TagString: PlayerSuperProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   rb: {fileID: 8592618926380639578}
   throwForce: 50
   throwUpForce: 20
-  radius: 0.5
+  radius: 0.1
   force: 1

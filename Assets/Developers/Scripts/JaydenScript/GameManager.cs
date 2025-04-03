@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject pickup;
     public GameObject lifePickup;
     float waitTime;
-    float minTime = 15f;
-    float maxTime = 30f;
+    float minTimeBomb = 40f;
+    float maxTimeBomb = 80f;
+    float minTimeHealth = 15f;
+    float maxTimeHealth = 30f;
     public int playerHealth = 10;
     public int playerScore = 0;
     public int specialMoveValue = 0;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
-            waitTime = Random.Range(minTime, maxTime);
+            waitTime = Random.Range(minTimeBomb, maxTimeBomb);
             yield return new WaitForSeconds(waitTime);
             Instantiate(pickup, spawnLocation, Quaternion.identity);
         }
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
-            waitTime = Random.Range(minTime, maxTime);
+            waitTime = Random.Range(minTimeHealth, maxTimeHealth);
             yield return new WaitForSeconds(waitTime);
             Instantiate(lifePickup, spawnLocation, Quaternion.identity);
         }

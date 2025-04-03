@@ -9,13 +9,16 @@ public class Bomb : MonoBehaviour
     [SerializeField] Rigidbody rb;
     public float throwForce = 1f;
     public float throwUpForce = 1f;
-    public float radius = 1f;
+    public float radius = 0.5f;
     public float force = 200f;
+
+    private SpawnEvilEnemies spawnManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = FindFirstObjectByType<Player>();
+        spawnManager = FindFirstObjectByType<SpawnEvilEnemies>();
 
         Vector3 force = transform.forward * throwForce + transform.up * throwUpForce;
         rb.AddForce(force, ForceMode.Impulse);
@@ -40,7 +43,14 @@ public class Bomb : MonoBehaviour
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
+            if (nearbyObject.CompareTag("Crow") || nearbyObject.CompareTag("Frog") || nearbyObject.CompareTag("Rat"))
+            {
+                if (spawnManager != null)
+                {
+                    spawnManager.RemoveEnemy(nearbyObject.gameObject);
+                }
                 Destroy(nearbyObject.gameObject);
+            }
         }
 
         Destroy(gameObject);
@@ -49,5 +59,6 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 }
