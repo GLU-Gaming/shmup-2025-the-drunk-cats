@@ -165,7 +165,7 @@ public class CrowEnemy : MonoBehaviour
         
             timerCrow += Time.deltaTime;
 
-            if (timerCrow >= 5f && !dashPlayer)
+            if (timerCrow >= 4f && !dashPlayer)
             {
                 timerCrow = 0;
 
