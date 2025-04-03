@@ -409,37 +409,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1142678136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1142678137}
-  m_Layer: 0
-  m_Name: RailCannonWarnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1142678137
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142678136}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1797353297}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207063781
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +587,7 @@ MonoBehaviour:
   laserWarn: {fileID: 5375897151346447318, guid: 20121feff5d2ab24da3b956c82a0a9c3, type: 3}
   minigunB: {fileID: 8762855471704505457, guid: 5dcb5e700b7588142b09d9b84c472414, type: 3}
   laserPoint: {fileID: 1207063782}
-  laserPointWarn: {fileID: 1142678137}
+  laserPointWarn: {fileID: 0}
   minigun: {fileID: 1918188140}
   minigunC: 0.07
   minigunSU: 0
@@ -785,7 +754,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1207063782}
-  - {fileID: 1142678137}
   m_Father: {fileID: 1310927951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1797353298
@@ -823,8 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 6306822786217543052, guid: 49afe863da4ea91429fed6535f981e58, type: 3}
   laserWarn: {fileID: 5375897151346447318, guid: 20121feff5d2ab24da3b956c82a0a9c3, type: 3}
-  laserPoint: {fileID: 1142678137}
-  laserPointWarn: {fileID: 1207063782}
+  laserPoint: {fileID: 1207063782}
 --- !u!1 &1918188139
 GameObject:
   m_ObjectHideFlags: 0

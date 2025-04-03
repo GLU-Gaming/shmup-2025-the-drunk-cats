@@ -10,10 +10,9 @@ public class RailCannon : MonoBehaviour
     private float laserTCD;
     private float laserTCDW;
 
-    private float laserFiredTCD;
-
     private bool laserFired = false;
     private bool laserFiredWarn = false;
+    private bool laserDone = false;
 
     private GameObject warningLaser;
 
@@ -40,19 +39,14 @@ public class RailCannon : MonoBehaviour
         laserTCDW += Time.deltaTime;
 
 
-        if (laserFired)
+        if (laserDone)
         {
-            laserFiredTCD += Time.deltaTime;
 
-            laserTCD = 0;
-            laserTCDW = 0;
-
-            if (laserFiredTCD >= 5f)
-            {
+                laserDone = false;
                 laserFired = false;
                 laserFiredWarn = false;
-                laserFiredTCD = 0;
-            }
+                laserTCD = 0;
+                laserTCDW = 0;  
             
         }
 
@@ -60,7 +54,7 @@ public class RailCannon : MonoBehaviour
         {
             if (!laserFiredWarn)
             {
-                GameObject warn = Instantiate(laser, laserPoint.position, laserPoint.rotation);
+                GameObject warn = Instantiate(laserWarn, laserPoint.position, laserPoint.rotation);
                 warningLaser = warn;
                 laserFiredWarn  = true;
             }
@@ -69,28 +63,35 @@ public class RailCannon : MonoBehaviour
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+            if (laserTCD <= 3.7f && warningLaser != null)
+            {
+                laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+
+
+                warningLaser.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+
+            }
+
         }
 
         if (laserTCD >= 5f)
         {
-            Instantiate(laser, laserPoint.position, laserPoint.rotation);
+            if (!laserFired)
+            {
+                Instantiate(laser, laserPoint.position, laserPoint.rotation);
 
-            Vector3 direction = player.position - laserPoint.transform.position;
-
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
-
+                laserFired = true;
+            }
+        
             if (warningLaser != null)
             {
                 Destroy(warningLaser);
             }
 
-            if (laserFiredTCD >= 3f)
+            if (laserTCD >= 10f)
             {
 
-                laserFired = true;
+                laserDone = true;
 
             }
 
