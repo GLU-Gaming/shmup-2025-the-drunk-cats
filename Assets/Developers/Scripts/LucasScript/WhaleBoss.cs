@@ -26,9 +26,11 @@ public class WhaleBoss : MonoBehaviour
     private float laserTCD;
     private float laserTCDW;
 
-    [SerializeField] int laserAmount;
+    private int laserAmount = 10;
 
     private float minigunTCD;
+
+    private float attackDeciderT;
 
     [SerializeField] float minigunC = 0.07f;
 
@@ -47,35 +49,57 @@ public class WhaleBoss : MonoBehaviour
         turnAmount = Random.Range(13, 16);
 
         laserPZ = laserPoint.position.z;
-        laserPZW = laserPointWarn.position.z;
         minigunPZ = minigun.position.z;
     }
 
-    void Update()
-    {
-        if (attackType == AttackType.Laser)
-        {
+    //void Update()
+    //{
+    //    if (attackType == AttackType.Laser)
+    //    {
 
-            tfWhale.position = new Vector3(tfWhale.position.x, -6f, tfWhale.position.z);
-            CannonShoot();
-        }
+    //        tfWhale.position = new Vector3(tfWhale.position.x, -6f, tfWhale.position.z);
+    //        RailCannonShoot();
 
-        else if (attackType == AttackType.Minigun)
-        {
+    //    }
 
-            tfWhale.position = new Vector3(tfWhale.position.x, 7f, tfWhale.position.z);
-            MinigunShoot();
+    //    else if (attackType == AttackType.Minigun)
+    //    {
 
-        }
+    //        tfWhale.position = new Vector3(tfWhale.position.x, 7f, tfWhale.position.z);
+    //        MinigunShoot();
 
-        else
-        {
+    //    }
 
-            tfWhale.position = new Vector3(tfWhale.position.x, 0f, tfWhale.position.z);
+    //    else
+    //    {
+    //        attackDeciderT += Time.deltaTime;
 
-        }
+    //        tfWhale.position = new Vector3(tfWhale.position.x, 0f, tfWhale.position.z);
 
-    }
+    //        if (attackDeciderT >= 2f)
+    //        {
+    //            DecideNextAttack();
+    //            attackDeciderT = 0f;
+    //        }
+
+    //    }
+
+    //}
+
+    //private void DecideNextAttack()
+    //{
+    //    int random = Random.Range(0, 2);
+    //    if (random <= 0)
+    //    {
+    //        attackType = AttackType.Laser;
+    //    }
+
+    //    else if (random >= 1)
+    //    {
+    //        attackType = AttackType.Minigun;
+    //    }
+    //    Debug.Log(random);
+    //}
 
     private void MinigunShoot()
     {
@@ -113,7 +137,7 @@ public class WhaleBoss : MonoBehaviour
         }
     }
 
-    private void CannonShoot()
+    private void RailCannonShoot()
     {
         laserTCD += Time.deltaTime;
         laserTCDW += Time.deltaTime;
