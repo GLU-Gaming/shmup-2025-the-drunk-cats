@@ -9,21 +9,26 @@ public class FrogEnemy : MonoBehaviour
 {
     public GameObject frogTongue;
     public Transform frogBulletSpawn;
+    public float healthFrog = 3;
     public float scaleDuration = 0.5f;
     public float moveSpeed = 5;
+
+    private SpawnEvilEnemies spawnManager;
+    private Transform player;
     public GameObject frogEnemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InitialMove();
+        spawnManager = FindFirstObjectByType<SpawnEvilEnemies>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         StartCoroutine(SpawnAndScaleTongue());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        CheckHealth();
     }
 
     private IEnumerator MoveFrog()
@@ -41,16 +46,13 @@ public class FrogEnemy : MonoBehaviour
         frogEnemy.transform.position = targetPosition;
     }
 
-    public void InitialMove()
-    {
-        Vector3 frogSpawnPoint = new Vector3(16, Random.Range(-3, 5), 0);
-        Instantiate(frogEnemy, frogSpawnPoint, Quaternion.identity);
-        MoveFrog();
-    }
     private IEnumerator SpawnAndScaleTongue()
     {
         while (true)
         {
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            frogBulletSpawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
             GameObject instantiatedTongue = Instantiate(frogTongue, frogBulletSpawn.position, frogBulletSpawn.rotation);
             StartCoroutine(ScaleTongue(instantiatedTongue, 12, scaleDuration));
             yield return new WaitForSeconds(5f);
@@ -83,5 +85,42 @@ public class FrogEnemy : MonoBehaviour
         tongue.transform.localScale = initialScale;
         Destroy(tongue);    
         yield return MoveFrog();
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            RemoveRat();
+        }
+
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+            healthFrog--;
+        }
+
+        else if (collision.gameObject.CompareTag("PlayerSuperProjectile"))
+        {
+            RemoveRat();
+        }
+
+    }
+
+    private void CheckHealth()
+    {
+
+        if (healthFrog <= 0)
+        {
+            RemoveRat();
+        }
+
+    }
+    private void RemoveRat()
+    {
+        if (spawnManager != null)
+        {
+            spawnManager.RemoveEnemy(gameObject);
+        }
+        Destroy(gameObject);
     }
 }
