@@ -97,9 +97,13 @@ public class RailCannon : MonoBehaviour
             {
                 laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
-
                 warningLaser.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
+            }
+
+            if (laserTCD <= 5f && warningLaser != null)
+            {
+                warningLaser.transform.position = new Vector3(laserPoint.position.x, laserPoint.position.y, laserPoint.position.z);
             }
 
         }
@@ -117,6 +121,12 @@ public class RailCannon : MonoBehaviour
             if (warningLaser != null)
             {
                 Destroy(warningLaser);
+            }
+
+            if (laserTCD <= 9.2f && laserShoot != null)
+            {
+                laserShoot.transform.position = new Vector3(laserPoint.position.x, laserPoint.position.y, laserPoint.position.z);
+
             }
 
             if (laserTCD >= 9.2f && laserShoot != null)
