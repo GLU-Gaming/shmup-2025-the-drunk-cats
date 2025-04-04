@@ -11,6 +11,7 @@ public class RailCannon : MonoBehaviour
     private float laserTCDW;
 
     private bool laserFired = false;
+    private bool laserFiredOFR = false;
     private bool laserFiredWarn = false;
     private bool laserDone = false;
 
@@ -34,18 +35,31 @@ public class RailCannon : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             RailCannonShoot();
-
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !laserFired)
         {
             laserDone = true;
             Destroy(laserShoot);
             Destroy(warningLaser);
+        }
+
+        else if (other.CompareTag("Player") && laserFired)
+        {
+            laserFiredOFR = true;
+            Destroy(warningLaser);
+        }
+    }
+
+    private void Update()
+    {
+        if (laserFiredOFR)
+        {
+            RailCannonShoot();
         }
     }
     private void RailCannonShoot()
@@ -57,6 +71,7 @@ public class RailCannon : MonoBehaviour
         if (laserDone)
         {
 
+                laserFiredOFR = false;
                 laserDone = false;
                 laserFired = false;
                 laserFiredWarn = false;
