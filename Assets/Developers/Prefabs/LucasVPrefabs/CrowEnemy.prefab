@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9137304351597503273}
   - component: {fileID: 8745383814497619191}
-  - component: {fileID: 620033235059389984}
   - component: {fileID: 2570716058319034196}
   - component: {fileID: 6691292067131983011}
+  - component: {fileID: 2446017688771313535}
   m_Layer: 9
   m_Name: CrowEnemy
   m_TagString: Crow
@@ -53,27 +53,6 @@ MonoBehaviour:
   tfCrow: {fileID: 9137304351597503273}
   bullet: {fileID: 2878698992006263833, guid: e2f3aea9da0de934e84ad3208dd50e82, type: 3}
   tfBulletSpawn: {fileID: 355366783787192375}
---- !u!65 &620033235059389984
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738680075600354510}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &2570716058319034196
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -124,6 +103,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!135 &2446017688771313535
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738680075600354510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.5942948
+  m_Center: {x: -0.34204936, y: 0.5051305, z: 0}
 --- !u!1 &1064517092316238560
 GameObject:
   m_ObjectHideFlags: 0

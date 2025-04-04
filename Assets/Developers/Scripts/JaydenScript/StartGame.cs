@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
@@ -11,6 +12,11 @@ public class StartGame : MonoBehaviour
     public void Startgame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     // Update is called once per frame
     void Update()
