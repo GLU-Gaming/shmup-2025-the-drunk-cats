@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 1685398574981933515}
   - component: {fileID: 4213595735832435717}
   - component: {fileID: 5757072156238934937}
-  - component: {fileID: 5003571142356986222}
   - component: {fileID: 6133912261432603105}
+  - component: {fileID: 5570959648275785225}
   m_Layer: 0
   m_Name: Frog Enemy
   m_TagString: Untagged
@@ -59,14 +59,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4175031752449436526}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000046193594, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 180}
-  m_LocalScale: {x: 0.008, y: 0.008, z: 0.08}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 959060998893582804}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &4213595735832435717
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -120,8 +120,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5003571142356986222
-BoxCollider:
+--- !u!114 &6133912261432603105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175031752449436526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06abca760c54554408c0c507704379f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frogTongue: {fileID: 8680245223527785843, guid: 342aa0945f51e2647a77d29792bfc9d4, type: 3}
+  frogBulletSpawn: {fileID: 959060998893582804}
+  healthFrog: 5
+  scaleDuration: 0.5
+  moveSpeed: 2
+  frogActivate: 0
+  frogEnemy: {fileID: 4175031752449436526}
+--- !u!136 &5570959648275785225
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -138,24 +157,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6133912261432603105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4175031752449436526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06abca760c54554408c0c507704379f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogTongue: {fileID: 8680245223527785843, guid: 342aa0945f51e2647a77d29792bfc9d4, type: 3}
-  frogBulletSpawn: {fileID: 959060998893582804}
-  healthFrog: 3
-  scaleDuration: 0.5
-  moveSpeed: 2
-  frogEnemy: {fileID: 4175031752449436526}
+  serializedVersion: 2
+  m_Radius: 151.91858
+  m_Height: 249.29178
+  m_Direction: 1
+  m_Center: {x: 79.50863, y: -5.7105217, z: -45.60698}
