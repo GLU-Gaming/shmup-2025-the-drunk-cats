@@ -20,11 +20,16 @@ public class RailCannon : MonoBehaviour
 
     private Transform player;
 
+    [SerializeField] float health = 10;
+
+    private RocketLauncher rocketLauncher;
+
 
     private void Start()
     {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        rocketLauncher = GetComponent<RocketLauncher>();
 
     }
 
@@ -61,6 +66,18 @@ public class RailCannon : MonoBehaviour
         {
             RailCannonShoot();
         }
+
+        if (health <= 0)
+        {
+            if (rocketLauncher != null)
+            {
+                rocketLauncher.enabled = true;  
+            }
+            Destroy(laserShoot);
+            Destroy(warningLaser);
+            Destroy(gameObject);
+        }
+
     }
     private void RailCannonShoot()
     {
@@ -139,6 +156,18 @@ public class RailCannon : MonoBehaviour
         }
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+
+            health -= 1;
+
+        }
+
+       
     }
 
 }

@@ -33,7 +33,7 @@ public class WhaleBoss : MonoBehaviour
                 boostedSpeed += 0.05f;
             }
 
-            else
+            if (tfWhale.position.y >= 5f || tfWhale.position.y <= -5f)
             {
                 boostedSpeed = 0f;
             }
