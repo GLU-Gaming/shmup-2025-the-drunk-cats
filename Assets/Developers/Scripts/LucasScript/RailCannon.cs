@@ -93,7 +93,7 @@ public class RailCannon : MonoBehaviour
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            if (laserTCD <= 3.7f && warningLaser != null)
+            if (laserTCD <= 1.7f && warningLaser != null)
             {
                 laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
@@ -101,14 +101,14 @@ public class RailCannon : MonoBehaviour
 
             }
 
-            if (laserTCD <= 5f && warningLaser != null)
+            if (laserTCD <= 3f && warningLaser != null)
             {
                 warningLaser.transform.position = new Vector3(laserPoint.position.x, laserPoint.position.y, laserPoint.position.z);
             }
 
         }
 
-        if (laserTCD >= 5f)
+        if (laserTCD >= 3f)
         {
             if (!laserFired)
             {
@@ -123,13 +123,13 @@ public class RailCannon : MonoBehaviour
                 Destroy(warningLaser);
             }
 
-            if (laserTCD <= 9.2f && laserShoot != null)
+            if (laserTCD <= 7.2f && laserShoot != null)
             {
                 laserShoot.transform.position = new Vector3(laserPoint.position.x, laserPoint.position.y, laserPoint.position.z);
 
             }
 
-            if (laserTCD >= 9.2f && laserShoot != null)
+            if (laserTCD >= 7.2f && laserShoot != null)
             {
                 Destroy(laserShoot);
                 laserDone = true;
