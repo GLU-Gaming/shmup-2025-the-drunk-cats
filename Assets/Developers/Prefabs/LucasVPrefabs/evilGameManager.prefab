@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5396054fb61fe140a0223e74b998fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frogEnemy: {fileID: 0}
+  round: 1
   evilEnemies:
   - {fileID: 738680075600354510, guid: a143702aa08a1714abe5014675761b45, type: 3}
   - {fileID: 6245364876854724482, guid: 05b3825f170959342bb0046a910e7aa8, type: 3}
+  - {fileID: 4175031752449436526, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
+  spawnedEnemies: []
