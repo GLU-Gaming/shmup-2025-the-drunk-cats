@@ -56,7 +56,7 @@ public class FrogEnemy : MonoBehaviour
         {
             if (!frogActivate)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(5f);
                 frogActivate = true;
                 yield return new WaitUntil(() => frogActivate);
             }

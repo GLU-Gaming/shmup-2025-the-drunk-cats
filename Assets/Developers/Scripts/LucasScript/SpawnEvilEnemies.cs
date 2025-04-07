@@ -42,7 +42,23 @@ public class SpawnEvilEnemies : MonoBehaviour
             }
             else if (round == 5 && !roundIsBusy) 
             {
-                StartCoroutine(Round(0, 0, 3));
+                StartCoroutine(Round(0, 0, 5));
+            }
+            else if (round == 6 && !roundIsBusy)
+            {
+                StartCoroutine(Round(0, 10, 5));
+            }
+            else if (round == 7 && !roundIsBusy)
+            {
+                StartCoroutine(Round(5, 8, 5));
+            }
+            else if (round == 7 && !roundIsBusy)
+            {
+                StartCoroutine(Round(10, 8, 8));
+            }
+            else if (round == 8 && !roundIsBusy)
+            {
+                StartCoroutine(Round(15, 10, 8));
             }
         }
     }
