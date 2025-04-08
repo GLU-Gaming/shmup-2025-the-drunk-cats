@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     float maxTimeBomb = 80f;
     float minTimeHealth = 15f;
     float maxTimeHealth = 30f;
-    public int playerHealth = 10;
+    public int playerHealth = 5;
     public int playerScore = 0;
     public int specialMoveValue = 0;
 
@@ -51,10 +51,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartCoroutine(player.PlayerHit());
-        }
         if (playerHealth <= 0)
         {
             SceneManager.LoadScene(3);

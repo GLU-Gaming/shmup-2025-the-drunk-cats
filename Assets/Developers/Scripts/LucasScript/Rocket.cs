@@ -12,7 +12,7 @@ public class Rocket : MonoBehaviour
     private float timer;
     void Start()
     {
-        speedRocket = 3.4f;
+        speedRocket = 5.4f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
@@ -27,7 +27,7 @@ public class Rocket : MonoBehaviour
         if (timer >= 0.5f)
         {
 
-            speedRocket = -3f;
+            speedRocket = -5f;
 
             Vector3 direction = player.position - transform.position;
 
@@ -36,7 +36,7 @@ public class Rocket : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
         }
 
-        if (Time.time >= 4f)
+        if (timer >= 4f)
         {
             Destroy(gameObject);
         }
