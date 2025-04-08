@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7434840237003162837}
   - component: {fileID: 7886169832894793573}
   - component: {fileID: 2441727357121255069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,21 +223,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1591003547458597555, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2280615341823888707, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2686515740590998174, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3330768116265307231, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_Color.b
@@ -250,6 +258,10 @@ PrefabInstance:
     - target: {fileID: 3330768116265307231, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361191729152590402, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6500205566734343101, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
