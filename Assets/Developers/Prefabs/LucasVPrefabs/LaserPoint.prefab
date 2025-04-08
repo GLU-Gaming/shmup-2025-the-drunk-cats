@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6089611241119221724}
   - component: {fileID: 7734566090100092269}
   - component: {fileID: 7302840946754978230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserVisual
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 643551763806512767}
   - component: {fileID: 8508157429251920050}
   - component: {fileID: 8460709737886227170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4954,7 +4954,7 @@ GameObject:
   - component: {fileID: 9072390806876605941}
   - component: {fileID: 4158789807553826067}
   - component: {fileID: 8628481235457308432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5073,9 +5073,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5780947075086359941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserPoint
-  m_TagString: Untagged
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5109,9 +5109,9 @@ GameObject:
   - component: {fileID: 635569614058456521}
   - component: {fileID: 5894288039803270362}
   - component: {fileID: 4026769532088810614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
