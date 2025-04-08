@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 322694735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -135, y: -9.3, z: 128.3}
+  m_LocalPosition: {x: -135, y: -9.3, z: 130}
   m_LocalScale: {x: 35, y: 17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup: {fileID: 2203238991044067597, guid: d869c0edca5a86048b8a9063e8797d12, type: 3}
   lifePickup: {fileID: 7052797187198934582, guid: fe8d6472b56a2f0488d25dcac691d57f, type: 3}
-  playerHealth: 10
+  playerHealth: 5
   playerScore: 0
   specialMoveValue: 0
 --- !u!4 &1410767718
@@ -2431,7 +2431,7 @@ Transform:
   m_GameObject: {fileID: 1595319975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65, y: -9.3, z: 128.3}
+  m_LocalPosition: {x: -65, y: -9.3, z: 130}
   m_LocalScale: {x: 35, y: 17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3117,7 +3117,7 @@ PrefabInstance:
     - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
       propertyPath: 'evilEnemies.Array.data[2]'
       value: 
-      objectReference: {fileID: 4175031752449436526, guid: ef3fbb79f1c285742a04d03e88203186, type: 3}
+      objectReference: {fileID: 2304914468410159162, guid: 5346aaf6715feab4b90e7022b09a4d1a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3572,7 +3572,7 @@ Transform:
   m_GameObject: {fileID: 2062704176}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -100, y: -9.3, z: 128.3}
+  m_LocalPosition: {x: -100, y: -9.3, z: 130}
   m_LocalScale: {x: 35, y: 17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
