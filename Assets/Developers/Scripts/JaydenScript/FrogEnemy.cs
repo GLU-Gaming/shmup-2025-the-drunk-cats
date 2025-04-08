@@ -65,7 +65,7 @@ public class FrogEnemy : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             frogBulletSpawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
             instantiatedTongue = Instantiate(frogTongue, frogBulletSpawn.position, frogBulletSpawn.rotation);
-            StartCoroutine(ScaleTongue(instantiatedTongue, 12, scaleDuration));
+            StartCoroutine(ScaleTongue(instantiatedTongue, 14, scaleDuration));
             yield return new WaitForSeconds(5f);
         }
     }
@@ -79,7 +79,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * -12 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * -14 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -90,7 +90,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * 12 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * 14 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(targetScale, initialScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
