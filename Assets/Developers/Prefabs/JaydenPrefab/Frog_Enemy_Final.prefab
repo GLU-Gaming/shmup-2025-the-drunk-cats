@@ -267,6 +267,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6220304937906010864}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7572677327116952132}
   m_SourcePrefab: {fileID: 100100000, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
 --- !u!4 &1492771562163448448 stripped
 Transform:
@@ -290,6 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06abca760c54554408c0c507704379f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioFrogTongue: {fileID: 8300000, guid: 283554bda8b1a0f47b3b7124e45de8e3, type: 3}
+  audioSource: {fileID: 6220304937906010864}
   frogTongue: {fileID: 8680245223527785843, guid: 342aa0945f51e2647a77d29792bfc9d4, type: 3}
   frogBulletSpawn: {fileID: 1561301741760659581}
   healthFrog: 5
@@ -329,11 +334,11 @@ AudioSource:
   m_GameObject: {fileID: 2304914468410159162}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 69d6ad1d9125e0c42a5c0c880470472e, type: 2}
+  m_audioClip: {fileID: 8300000, guid: d09e0019348287f4ca140aaac37ffda5, type: 3}
+  m_Resource: {fileID: 8300000, guid: d09e0019348287f4ca140aaac37ffda5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -417,3 +422,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &-7572677327116952132
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304914468410159162}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 1e+9
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

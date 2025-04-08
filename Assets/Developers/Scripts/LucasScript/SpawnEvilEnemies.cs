@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class SpawnEvilEnemies : MonoBehaviour
 {
+    [SerializeField] AudioClip AudioCrow;
+    [SerializeField] AudioClip AudioRat;
+    [SerializeField] AudioClip AudioFrog;
+    public AudioSource audioSource;
+
     private float xCrow;
     private float yCrow;
     private float xRat;
@@ -22,7 +27,7 @@ public class SpawnEvilEnemies : MonoBehaviour
     void Start()
     {
         spawnedEnemies = new List<GameObject>();
-        //StartCoroutine(Round1());
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(Round(8, 0, 0));
     }
 
@@ -60,11 +65,11 @@ public class SpawnEvilEnemies : MonoBehaviour
             }
             else if (round == 9 && !roundIsBusy)
             {
-                StartCoroutine(Round(15, 15, 8));
+                StartCoroutine(Round(15, 10, 8));
             }
             else if (round == 10 && !roundIsBusy)
             {
-                StartCoroutine(Round(20, 15, 10));
+                StartCoroutine(Round(20, 10, 10));
             }
             else if (round == 10 && !roundIsBusy)
             {
@@ -76,15 +81,22 @@ public class SpawnEvilEnemies : MonoBehaviour
     private IEnumerator Round(int crowAmount, int ratAmount, int frogAmount)
     {
         roundIsBusy = true;
+        if (crowAmount > 0)
+        {
+            audioSource.PlayOneShot(AudioCrow);
+        }
         for (int i = 0; i < crowAmount; i++)
         {
-            yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1f);
             xCrow = Random.Range(12f, 14f);
             yCrow = Random.Range(-4f, 4f);
             GameObject crow = Instantiate(evilEnemies[0], new Vector3(xCrow, yCrow, 0), Quaternion.identity);
             spawnedEnemies.Add(crow);
         }
-
+        if (ratAmount > 0)
+        {
+            audioSource.PlayOneShot(AudioRat);
+        }
         for (int i = 0; i < ratAmount; i++)
         {
             yield return new WaitForSeconds(0.8f);
@@ -94,12 +106,16 @@ public class SpawnEvilEnemies : MonoBehaviour
             spawnedEnemies.Add(rat);
         }
 
+        if (frogAmount > 0)
+        {
+            audioSource.PlayOneShot(AudioFrog);
+        }
         for (int i = 0; i < frogAmount; i++)
         {
             yield return new WaitForSeconds(2f);
             xFrog = Random.Range(12f, 14f);
             yFrog = Random.Range(-4f, 4f);
-            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(90, 0, 0));
+            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(0, 0, 0));
             spawnedEnemies.Add(frog);
         }
         round++;
