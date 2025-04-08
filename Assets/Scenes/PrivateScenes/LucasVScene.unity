@@ -442,32 +442,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0366761224065b458a9ea803d726631, type: 3}
---- !u!1 &1704905534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
-  m_PrefabInstance: {fileID: 4289197313173964156}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1704905538
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704905534}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 15.007832, y: 4.140942, z: 1}
-  m_Center: {x: -7.003916, y: -0.046841383, z: 0}
 --- !u!114 &1768131067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5111818444199128001, guid: e0366761224065b458a9ea803d726631, type: 3}
@@ -568,9 +542,41 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.17456198
       objectReference: {fileID: 0}
+    - target: {fileID: 707085000318483288, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099906058588839607, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636495139224434150, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636495139224434150, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436330101111336571, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920255810717151247, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Name
       value: Whale
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6493083740863582168, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -613,8 +619,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6729057844459803036, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729057844459803036, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Constraints
       value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778235282558473472, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803023064126304814, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180241327271799790, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9057955443649690625, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Height
@@ -635,10 +657,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1704905538}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
