@@ -83,6 +83,21 @@ public class WhaleBoss : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+            RailCannon railCannon = collision.contacts[0].thisCollider.GetComponent<RailCannon>();
+
+            if (railCannon != null)
+            {
+                railCannon.TakeDamage();
+
+
+            }
+        }
     }
+
+}
 
 
