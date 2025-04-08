@@ -99,7 +99,7 @@ public class SpawnEvilEnemies : MonoBehaviour
             yield return new WaitForSeconds(2f);
             xFrog = Random.Range(12f, 14f);
             yFrog = Random.Range(-4f, 4f);
-            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(90, 0, 0));
+            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(0, 0, 0));
             spawnedEnemies.Add(frog);
         }
         round++;
