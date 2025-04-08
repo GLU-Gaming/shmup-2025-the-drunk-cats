@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using NUnit.Framework;
+using UnityEngine.SceneManagement;
 
 public class SpawnEvilEnemies : MonoBehaviour
 {
@@ -53,13 +54,21 @@ public class SpawnEvilEnemies : MonoBehaviour
             {
                 StartCoroutine(Round(5, 8, 5));
             }
-            else if (round == 7 && !roundIsBusy)
+            else if (round == 8 && !roundIsBusy)
             {
                 StartCoroutine(Round(10, 8, 8));
             }
-            else if (round == 8 && !roundIsBusy)
+            else if (round == 9 && !roundIsBusy)
             {
-                StartCoroutine(Round(15, 10, 8));
+                StartCoroutine(Round(15, 15, 8));
+            }
+            else if (round == 10 && !roundIsBusy)
+            {
+                StartCoroutine(Round(20, 15, 10));
+            }
+            else if (round == 10 && !roundIsBusy)
+            {
+                SceneManager.LoadScene(2);
             }
         }
     }
