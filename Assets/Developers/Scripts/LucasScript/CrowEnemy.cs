@@ -133,7 +133,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow -= 0.3f;
+        speedCrow -= 0.2f;
 
         MoveCrow();
 
