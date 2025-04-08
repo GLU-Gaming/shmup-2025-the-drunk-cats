@@ -291,10 +291,10 @@ PrefabInstance:
       addedObject: {fileID: 3288055404717689591}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9eb07f7f7bf816341a5d2021283cd074, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5106939997356688825}
+      addedObject: {fileID: 1047600317859657252}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9eb07f7f7bf816341a5d2021283cd074, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1047600317859657252}
+      addedObject: {fileID: 2954067535955758062}
   m_SourcePrefab: {fileID: 100100000, guid: 9eb07f7f7bf816341a5d2021283cd074, type: 3}
 --- !u!4 &8504600024607735588 stripped
 Transform:
@@ -333,7 +333,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!136 &5106939997356688825
+--- !u!114 &1047600317859657252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029075160186348958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323de0f6a52c72b40a0a973fafebf17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 0}
+  bombPickup: {fileID: 0}
+  pickupActivated: 0
+  Pickup: {fileID: 0}
+  strongAttack: {fileID: 5520045402626701728, guid: 14bde5386e9abcc4f86a02569cef60ae, type: 3}
+  speed: 25
+  bombPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
+  bulletSpawnPoint: {fileID: 8334515834110388940}
+  fireRate: 0.4
+  rb: {fileID: 3288055404717689591}
+--- !u!136 &2954067535955758062
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,26 +375,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 1.2167639
+  m_Height: 3.0851388
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1047600317859657252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9029075160186348958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323de0f6a52c72b40a0a973fafebf17d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game: {fileID: 0}
-  strongAttack: {fileID: 5520045402626701728, guid: 14bde5386e9abcc4f86a02569cef60ae, type: 3}
-  speed: 25
-  bulletPrefab: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
-  bulletSpawnPoint: {fileID: 8334515834110388940}
-  fireRate: 0.4
-  rb: {fileID: 3288055404717689591}
+  m_Center: {x: -0.11254966, y: 0.035544038, z: 0}
