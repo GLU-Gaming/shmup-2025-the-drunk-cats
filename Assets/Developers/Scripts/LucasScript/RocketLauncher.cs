@@ -22,7 +22,7 @@ public class RocketLauncher : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 5f)
+        if (timer >= 8f)
         {
  
             ShootRocket();
