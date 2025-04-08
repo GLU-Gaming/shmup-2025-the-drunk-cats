@@ -89,16 +89,13 @@ public class WhaleBoss : MonoBehaviour
         {
             RailCannon railCannon = collision.contacts[0].thisCollider.GetComponent<RailCannon>();
 
-            Minigun minigunS = collision.contacts[1].thisCollider.GetComponent<Minigun>();
+            Minigun minigunS = collision.contacts[0].thisCollider.GetComponent<Minigun>();
 
-            if (railCannon != null && railCannon)
+            if (railCannon != null)
             {
                 railCannon.TakeDamage();
-
-
             }
-
-            else if (minigunS != null && minigunS)
+            else if (minigunS != null)
             {
                 minigunS.TakeDamageTwo();
             }
