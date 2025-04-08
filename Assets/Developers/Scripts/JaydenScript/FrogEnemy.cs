@@ -79,7 +79,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * -8 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * -12 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -90,7 +90,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * 8 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * 12 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(targetScale, initialScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;

@@ -24,7 +24,7 @@ public class Rocket : MonoBehaviour
         rbRocket.linearVelocity = transform.right * speedRocket;
 
 
-        if (timer >= 1.5f)
+        if (timer >= 0.5f)
         {
 
             speedRocket = -3f;
@@ -36,7 +36,11 @@ public class Rocket : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
         }
 
-       
+        if (Time.time >= 4f)
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 }
