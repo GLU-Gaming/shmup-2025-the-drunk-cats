@@ -5,6 +5,8 @@ public class WhaleBoss : MonoBehaviour
     [SerializeField] Transform tfWhale;
     [SerializeField] Rigidbody rbWhale;
 
+    private float health;
+
     private float speedWhale = 0.2f;
 
     private float boostedSpeed;
@@ -13,6 +15,11 @@ public class WhaleBoss : MonoBehaviour
     {
         MoveWhale();
         DecideHeight();
+
+        if (health >= 40)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -94,10 +101,13 @@ public class WhaleBoss : MonoBehaviour
             if (railCannon != null)
             {
                 railCannon.TakeDamage();
+
+                health ++;
             }
             else if (minigunS != null)
             {
                 minigunS.TakeDamageTwo();
+                health ++;
             }
         }
     }

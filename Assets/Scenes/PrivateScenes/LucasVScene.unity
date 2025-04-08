@@ -558,6 +558,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.112
       objectReference: {fileID: 0}
+    - target: {fileID: 3338903188781272476, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434575149220038057, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4436330101111336571, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -565,6 +573,10 @@ PrefabInstance:
     - target: {fileID: 4920255810717151247, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920255810717151247, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_TagString
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Name
@@ -576,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 6493083740863582168, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -633,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 6803023064126304814, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803023064126304814, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_TagString
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 8180241327271799790, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Layer

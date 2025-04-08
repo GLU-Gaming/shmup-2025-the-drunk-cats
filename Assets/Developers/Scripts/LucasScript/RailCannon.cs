@@ -20,7 +20,7 @@ public class RailCannon : MonoBehaviour
 
     private Transform player;
 
-    [SerializeField] float health = 10;
+    [SerializeField] float health = 20f;
 
     private RocketLauncher rocketLauncher;
 

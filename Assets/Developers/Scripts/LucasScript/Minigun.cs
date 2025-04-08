@@ -15,10 +15,11 @@ public class Minigun : MonoBehaviour
     [SerializeField] GameObject minigunB;
     [SerializeField] Transform minigun;
 
-    [SerializeField] float health = 10f;
+    [SerializeField] float health = 20f;
 
     private Minigun minigunS;
 
+    private RocketLauncher RocketLauncher;
 
 
     private void Start()
@@ -27,6 +28,9 @@ public class Minigun : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         minigunS = GetComponent<Minigun>();
+
+        RocketLauncher = FindAnyObjectByType<RocketLauncher>();
+
 
     }
     private void OnTriggerStay(Collider other)
@@ -85,7 +89,7 @@ public class Minigun : MonoBehaviour
         health -= 1;
         if (health <= 0)
         {
-          
+            RocketLauncher.enabled = true;
             Destroy(minigunS);
         }
     }
