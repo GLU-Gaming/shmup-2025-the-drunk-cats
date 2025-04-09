@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.WSA;
 
 public class BombPickup : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class BombPickup : MonoBehaviour
             player.pickupActivated = true;
             Destroy(gameObject);
         }
+
     }
 
     // Update is called once per frame
