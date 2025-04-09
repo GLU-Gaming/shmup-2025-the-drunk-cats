@@ -64,9 +64,9 @@ public class Minigun : MonoBehaviour
         if (minigunTCD >= minigunC)
         {
 
-            minigunPZ = Random.Range(0, 90);
+            minigunPZ = Random.Range(0, -90);
             minigun.transform.rotation = Quaternion.Euler(new Vector3(minigun.transform.rotation.x, minigun.transform.rotation.y, minigunPZ));
-            Instantiate(minigunB, minigun.position, minigun.rotation);
+            Instantiate(minigunB, minigun.position, Quaternion.Euler(new Vector3(minigun.transform.rotation.x, minigun.transform.rotation.y, minigunPZ + 90)));
             minigunTCD = 0f;
             minigunSU++;
         }
