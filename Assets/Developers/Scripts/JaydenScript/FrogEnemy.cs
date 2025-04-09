@@ -7,6 +7,8 @@ using TMPro;
 
 public class FrogEnemy : MonoBehaviour
 {
+    [SerializeField] AudioClip audioFrogTongue;
+    public AudioSource audioSource;
     public GameObject frogTongue;
     public Transform frogBulletSpawn;
     public float healthFrog = 5;
@@ -27,6 +29,7 @@ public class FrogEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         frogActivate = true;
         tongueCoroutine = StartCoroutine(SpawnAndScaleTongue());
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -72,6 +75,7 @@ public class FrogEnemy : MonoBehaviour
 
     private IEnumerator ScaleTongue(GameObject tongue, float targetScaleX, float duration)
     {
+        audioSource.PlayOneShot(audioFrogTongue);
         FrogTongue frogTongueScript = tongue.GetComponent<FrogTongue>();
         Vector3 initialScale = tongue.transform.localScale;
         Vector3 targetScale = new Vector3(targetScaleX, initialScale.y, initialScale.z);
