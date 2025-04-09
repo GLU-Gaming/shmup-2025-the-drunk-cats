@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 6089611241119221724}
   - component: {fileID: 7734566090100092269}
   - component: {fileID: 7302840946754978230}
+  - component: {fileID: 8232188319581670130}
+  - component: {fileID: 3152747495893071952}
+  - component: {fileID: 299225953967855801}
   m_Layer: 8
   m_Name: LaserVisual
   m_TagString: Crow
@@ -45,7 +48,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902745955075990134}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7734566090100092269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110,8 +113,71 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.381358, y: 0.8285002, z: 1}
+  m_Center: {x: -1.6906784, y: -0.08574999, z: 0}
+--- !u!65 &8232188319581670130
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902745955075990134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8249717, y: 6.8133135, z: 1}
+  m_Center: {x: -3.544051, y: 0.11845579, z: 0}
+--- !u!65 &3152747495893071952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902745955075990134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9904665, y: 4.3435373, z: 1}
+  m_Center: {x: -1.6375701, y: -0.07948471, z: 0}
+--- !u!65 &299225953967855801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902745955075990134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7616266, y: 3.9802043, z: 1}
+  m_Center: {x: -0.7737869, y: -0.17326325, z: 0}
 --- !u!1 &1445337809286059371
 GameObject:
   m_ObjectHideFlags: 0
