@@ -8,12 +8,21 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject retryMenuUI;
     public GameObject quitMenuUI;
+
+    [SerializeField] private AudioClip pauseSound;
+    private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +53,11 @@ public class PauseGame : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        if (pauseSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(pauseSound);
+        }
     }
     
     public void LoadMenu()

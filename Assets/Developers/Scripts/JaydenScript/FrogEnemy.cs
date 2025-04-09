@@ -7,6 +7,8 @@ using TMPro;
 
 public class FrogEnemy : MonoBehaviour
 {
+    [SerializeField] AudioClip audioFrogTongue;
+    public AudioSource audioSource;
     public GameObject frogTongue;
     public Transform frogBulletSpawn;
     public float healthFrog = 5;
@@ -27,6 +29,7 @@ public class FrogEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         frogActivate = true;
         tongueCoroutine = StartCoroutine(SpawnAndScaleTongue());
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,13 +68,14 @@ public class FrogEnemy : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             frogBulletSpawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
             instantiatedTongue = Instantiate(frogTongue, frogBulletSpawn.position, frogBulletSpawn.rotation);
-            StartCoroutine(ScaleTongue(instantiatedTongue, 12, scaleDuration));
+            StartCoroutine(ScaleTongue(instantiatedTongue, 14, scaleDuration));
             yield return new WaitForSeconds(5f);
         }
     }
 
     private IEnumerator ScaleTongue(GameObject tongue, float targetScaleX, float duration)
     {
+        audioSource.PlayOneShot(audioFrogTongue);
         FrogTongue frogTongueScript = tongue.GetComponent<FrogTongue>();
         Vector3 initialScale = tongue.transform.localScale;
         Vector3 targetScale = new Vector3(targetScaleX, initialScale.y, initialScale.z);
@@ -79,7 +83,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * -8 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * -14 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -90,7 +94,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * 8 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * 14 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(targetScale, initialScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;

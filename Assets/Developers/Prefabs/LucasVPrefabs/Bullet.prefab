@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5477174534446544227}
   - component: {fileID: 1880783298183818869}
   - component: {fileID: 4556725949592325419}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BulletVisual
-  m_TagString: Untagged
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,9 +119,9 @@ GameObject:
   - component: {fileID: 4363384838887835409}
   - component: {fileID: 487767836889738501}
   - component: {fileID: -22144319127938967}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
