@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6bd068779c82197488a3027d4994f0a8, type: 3}
       propertyPath: m_Name
-      value: Feather
+      value: feather
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66,6 +66,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6942672450674026041}
   m_SourcePrefab: {fileID: 100100000, guid: 6bd068779c82197488a3027d4994f0a8, type: 3}
+--- !u!4 &6297387351520893050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bd068779c82197488a3027d4994f0a8, type: 3}
+  m_PrefabInstance: {fileID: 5831714098266357649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6642528812892455616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd068779c82197488a3027d4994f0a8, type: 3}
@@ -84,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbBullet: {fileID: 6942672450674026041}
-  tfBullet: {fileID: 0}
+  tfBullet: {fileID: 6297387351520893050}
 --- !u!136 &4660077737365374447
 CapsuleCollider:
   m_ObjectHideFlags: 0
