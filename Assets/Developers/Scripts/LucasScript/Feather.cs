@@ -18,7 +18,7 @@ public class Feather : MonoBehaviour
         //Spawn with a velocity.
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        rbBullet.linearVelocity = transform.right * -7f;
+        rbBullet.linearVelocity = transform.forward * -7f;
 
         Vector3 direction = player.position - transform.position;
 
