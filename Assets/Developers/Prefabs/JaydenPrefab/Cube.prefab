@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5987135628039396242}
   - component: {fileID: -8018145589677375820}
   - component: {fileID: -7882173670621826958}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Cube
   m_TagString: PlayerSuperProjectile
   m_Icon: {fileID: 0}
