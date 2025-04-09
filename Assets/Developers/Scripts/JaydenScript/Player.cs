@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager game;
     [SerializeField] private BombPickup bombPickup;
+    public GameObject pauseMenuUI;
+    public GameObject qButton;
     public bool pickupActivated = false;
     public GameObject Pickup;
     public GameObject strongAttack;
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        qButton.SetActive(false);
         renderers = GetComponentsInChildren<Renderer>();
         playerCollider = GetComponent<Collider>();
         _camera = Camera.main;
@@ -86,8 +89,10 @@ public class Player : MonoBehaviour
     {
         if (game.specialMoveValue >= 200)
         {
+            qButton.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                qButton.SetActive(false);
                 specialMove();
                 game.specialMoveValue = 0;
             }
@@ -101,6 +106,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                pauseMenuUI.SetActive(false);
                 bomb();
             }
         }
