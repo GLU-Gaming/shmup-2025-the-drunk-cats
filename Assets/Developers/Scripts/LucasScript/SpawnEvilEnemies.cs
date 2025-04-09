@@ -61,15 +61,15 @@ public class SpawnEvilEnemies : MonoBehaviour
             }
             else if (round == 8 && !roundIsBusy)
             {
-                StartCoroutine(Round(10, 8, 8));
+                StartCoroutine(Round(8, 8, 8));
             }
             else if (round == 9 && !roundIsBusy)
             {
-                StartCoroutine(Round(15, 10, 8));
+                StartCoroutine(Round(10, 8, 8));
             }
             else if (round == 10 && !roundIsBusy)
             {
-                StartCoroutine(Round(20, 10, 10));
+                StartCoroutine(Round(12, 8, 8));
             }
             else if (round == 10 && !roundIsBusy)
             {

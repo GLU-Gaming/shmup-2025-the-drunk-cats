@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6679416436631476631}
   - component: {fileID: 4527442886310196678}
   - component: {fileID: -5161459126188670073}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: frogTongue
-  m_TagString: Frog
+  m_TagString: FrogTongue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

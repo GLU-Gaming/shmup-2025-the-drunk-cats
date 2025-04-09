@@ -12,6 +12,7 @@ TagManager:
   - Rat
   - BombPickup
   - LifePickup
+  - FrogTongue
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Pickup
   - Bomb
   - PlayerSpecialBullet
-  - 
+  - FrogTongue
   - 
   - 
   - 

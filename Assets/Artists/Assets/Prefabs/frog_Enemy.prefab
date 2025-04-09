@@ -298,7 +298,7 @@ MonoBehaviour:
   frogTongue: {fileID: 8680245223527785843, guid: 342aa0945f51e2647a77d29792bfc9d4, type: 3}
   frogBulletSpawn: {fileID: 1561301741760659581}
   healthFrog: 5
-  scaleDuration: 0.5
+  scaleDuration: 1
   moveSpeed: 2
   frogActivate: 0
   frogEnemy: {fileID: 2304914468410159162}

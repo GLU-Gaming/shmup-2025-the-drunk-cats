@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     public Transform bulletSpawnPoint;
     public float fireRate = 0.5f;
     private float nextFireTime = 0f;
+    public AudioClip shootSound;
+    public AudioClip specialMoveSound;
+    public AudioClip bombThrowSound;
+    public AudioSource audioSource;
     [SerializeField] Rigidbody rb;
     private Camera _camera;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Frog"))
+        if (collision.gameObject.CompareTag("Frog")|| collision.gameObject.CompareTag("FrogTongue"))
         {
             StartCoroutine(PlayerHit());
         }
@@ -71,15 +75,18 @@ public class Player : MonoBehaviour
     public void shoot()
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        audioSource.PlayOneShot(shootSound);
     }
 
     public void specialMove()
     {
         Instantiate(strongAttack, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        audioSource.PlayOneShot(specialMoveSound);
     }
 
     public void bomb()
     {
+        audioSource.PlayOneShot(bombThrowSound);
         Instantiate(bombPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         pickupActivated = false;
     }

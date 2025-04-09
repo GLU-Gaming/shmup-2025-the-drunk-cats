@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
+            Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
             waitTime = Random.Range(minTimeBomb, maxTimeBomb);
             yield return new WaitForSeconds(waitTime);
             Instantiate(pickup, spawnLocation, Quaternion.identity);
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            Vector3 spawnLocation = new Vector3(Random.Range(-7, 3), Random.Range(-2, 4), 0);
+            Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
             waitTime = Random.Range(minTimeHealth, maxTimeHealth);
             yield return new WaitForSeconds(waitTime);
             Instantiate(lifePickup, spawnLocation, Quaternion.identity);
