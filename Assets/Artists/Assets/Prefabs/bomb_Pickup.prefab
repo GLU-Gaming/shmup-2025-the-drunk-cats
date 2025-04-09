@@ -68,10 +68,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6a4d5e14dab4ba74d8aaa00fe18fe7ef, type: 2}
+    - target: {fileID: -6268844630653304657, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4527955274735743726, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a3793b3be5e846b42ac3132fffdfda3a, type: 2}
+    - target: {fileID: -669968435606484046, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -478235041445547549, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -79,6 +87,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
       propertyPath: m_Name
       value: bomb_Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980595251299706172, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986075020228978286, guid: 182382eea3b96bd41b92c1c9aab63232, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
