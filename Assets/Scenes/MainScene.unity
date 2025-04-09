@@ -405,7 +405,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8eccd1e13e89be499c46db2c2fe7eae, type: 2}
+  - {fileID: 2100000, guid: 62b0b5dc84aca2b46b998ec54a7fb0fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2407,7 +2407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickup: {fileID: 2203238991044067597, guid: d869c0edca5a86048b8a9063e8797d12, type: 3}
-  lifePickup: {fileID: 7052797187198934582, guid: fe8d6472b56a2f0488d25dcac691d57f, type: 3}
+  lifePickup: {fileID: 7906050135786224851, guid: fe8d6472b56a2f0488d25dcac691d57f, type: 3}
   playerHealth: 5
   playerScore: 0
   specialMoveValue: 0
@@ -2555,7 +2555,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8eccd1e13e89be499c46db2c2fe7eae, type: 2}
+  - {fileID: 2100000, guid: 3ddb7300bd8a6174c8b3f936a16c07d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
