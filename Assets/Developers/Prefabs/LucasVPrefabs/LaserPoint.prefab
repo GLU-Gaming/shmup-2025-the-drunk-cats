@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7302840946754978230}
   m_Layer: 8
   m_Name: LaserVisual
-  m_TagString: Enemy
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5111,7 +5111,7 @@ GameObject:
   - component: {fileID: 4026769532088810614}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Crow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

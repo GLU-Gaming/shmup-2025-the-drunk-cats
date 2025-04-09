@@ -27,7 +27,7 @@ public class Rocket : MonoBehaviour
         if (timer >= 0.5f)
         {
 
-            speedRocket = -5f;
+            speedRocket = -3f;
 
             Vector3 direction = player.position - transform.position;
 
