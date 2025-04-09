@@ -622,7 +622,7 @@ PrefabInstance:
     - target: {fileID: 1047600317859657252, guid: 03e527ea9fe325b449e8907e9af5c5ac, type: 3}
       propertyPath: bombPrefab
       value: 
-      objectReference: {fileID: 6136709326378263732, guid: e64f2c954dc02c940abaa324df7f2d28, type: 3}
+      objectReference: {fileID: 1959147108392016409, guid: 585abe84e215b0c4b8af8f5dee7ca072, type: 3}
     - target: {fileID: 8504600024607735588, guid: 03e527ea9fe325b449e8907e9af5c5ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
