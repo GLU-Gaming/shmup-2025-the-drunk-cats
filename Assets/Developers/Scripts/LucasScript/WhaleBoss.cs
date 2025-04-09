@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WhaleBoss : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class WhaleBoss : MonoBehaviour
 
         if (health >= 40)
         {
-            Destroy(gameObject);
+
+            SceneManager.LoadScene("WinScreen");
+
         }
 
     }
