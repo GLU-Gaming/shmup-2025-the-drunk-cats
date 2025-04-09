@@ -18,7 +18,7 @@ public class LifePickup : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            if (game.playerHealth < 10)
+            if (game.playerHealth <= 8)
             {
                 game.playerHealth++;
             }
