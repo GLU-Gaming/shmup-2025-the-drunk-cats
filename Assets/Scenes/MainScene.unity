@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
 --- !u!1 &430848907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
 --- !u!23 &812145737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
 --- !u!23 &1084842022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1665,7 +1665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 94c783dedb054ae4682e571873d013fb, type: 2}
+  - {fileID: 2100000, guid: adc836c42dae3e64e988c6544b41509c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
 --- !u!1 &1631447703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,7 +3523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
 --- !u!23 &1765225106
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4201,7 +4201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f93088a9c8805458ed41664dad6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
