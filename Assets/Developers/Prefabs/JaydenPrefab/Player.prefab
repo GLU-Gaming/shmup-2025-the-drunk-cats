@@ -347,10 +347,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 0}
   bombPickup: {fileID: 1667402583088866852, guid: 1f80aa553dcb66c47a66d2e32977c1da, type: 3}
+  pauseMenuUI: {fileID: 0}
+  qButton: {fileID: 0}
   pickupActivated: 0
-  Pickup: {fileID: 0}
+  Pickup: {fileID: 7906050135786224851, guid: fe8d6472b56a2f0488d25dcac691d57f, type: 3}
   strongAttack: {fileID: 5520045402626701728, guid: 14bde5386e9abcc4f86a02569cef60ae, type: 3}
-  speed: 25
+  speed: 30
   bombPrefab: {fileID: 1959147108392016409, guid: 585abe84e215b0c4b8af8f5dee7ca072, type: 3}
   bulletPrefab: {fileID: 1734142199120465673, guid: c36da2b56c0757342a7972f59469ffe7, type: 3}
   bulletSpawnPoint: {fileID: 8334515834110388940}
