@@ -59,7 +59,7 @@ public class FrogEnemy : MonoBehaviour
         {
             if (!frogActivate)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(5f);
                 frogActivate = true;
                 yield return new WaitUntil(() => frogActivate);
             }
@@ -69,7 +69,7 @@ public class FrogEnemy : MonoBehaviour
             frogBulletSpawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
             instantiatedTongue = Instantiate(frogTongue, frogBulletSpawn.position, frogBulletSpawn.rotation);
             StartCoroutine(ScaleTongue(instantiatedTongue, 14, scaleDuration));
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(8f);
         }
     }
 

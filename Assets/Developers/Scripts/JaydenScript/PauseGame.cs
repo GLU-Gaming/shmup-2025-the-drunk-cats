@@ -8,15 +8,19 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject retryMenuUI;
     public GameObject quitMenuUI;
+    public GameObject BombUI;
+    public Player player;
 
     [SerializeField] private AudioClip pauseSound;
     private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = FindFirstObjectByType<Player>();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        BombUI.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
@@ -38,6 +42,11 @@ public class PauseGame : MonoBehaviour
             {
                 Pause();
             }
+        }
+
+        if (player.pickupActivated)
+        {
+            BombUI.SetActive(true);
         }
     }
 

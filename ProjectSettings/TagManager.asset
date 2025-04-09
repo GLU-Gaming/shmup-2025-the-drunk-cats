@@ -24,8 +24,8 @@ TagManager:
   - EnemyBullet
   - Enemy
   - Pickup
-  - 
-  - 
+  - Bomb
+  - PlayerSpecialBullet
   - 
   - 
   - 

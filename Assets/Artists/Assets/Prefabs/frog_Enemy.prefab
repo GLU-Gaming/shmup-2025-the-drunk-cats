@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1942562498496930119}
   - component: {fileID: 8503604504382233457}
   - component: {fileID: 1344999865727713483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.72003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalPosition.y
@@ -182,11 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -84.369675
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalRotation.x
@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalRotation.z
@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_Name
-      value: Frog_Enemy_Final
+      value: frog_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4e2d606cbd4c23a48b76cca34f3ff370, type: 3}
       propertyPath: m_Layer
