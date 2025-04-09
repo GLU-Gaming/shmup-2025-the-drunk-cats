@@ -106,7 +106,7 @@ public class RailCannon : MonoBehaviour
 
             if (laserTCD <= 1.7f && warningLaser != null)
             {
-                laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+                laserPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90));
 
                 warningLaser.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
@@ -123,7 +123,7 @@ public class RailCannon : MonoBehaviour
         {
             if (!laserFired)
             {
-                GameObject warn = Instantiate(laser, laserPoint.position, laserPoint.rotation);
+                GameObject warn = Instantiate(laser, laserPoint.position, warningLaser.transform.rotation);
                 laserShoot = warn;
 
                 laserFired = true;
@@ -151,19 +151,6 @@ public class RailCannon : MonoBehaviour
 
 
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log(collision);
-    //    if (collision.gameObject.CompareTag("PlayerProjectile"))
-    //    {
-
-    //        health -= 1;
-
-    //    }
-
-       
-    //}
 
     public void TakeDamage()
     {
