@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject lifePickup;
     public SpawnEvilEnemies SpawnEvilEnemies;
     float waitTime;
-    float minTimeBomb = 40f;
-    float maxTimeBomb = 80f;
+    float minTimeBomb = 10f;
+    float maxTimeBomb = 11f;
     float minTimeHealth = 40f;
     float maxTimeHealth = 80f;
     public int playerHealth = 8;
@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.visible = false;
         player = FindFirstObjectByType<Player>();
         SpawnEvilEnemies = FindFirstObjectByType<SpawnEvilEnemies>();
         StartCoroutine(SpawnPickup());
@@ -35,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            if (!isBossBattleActive)
+            if (SpawnEvilEnemies.round < 11 && !isBossBattleActive)
             {
                 Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
                 waitTime = Random.Range(minTimeBomb, maxTimeBomb);

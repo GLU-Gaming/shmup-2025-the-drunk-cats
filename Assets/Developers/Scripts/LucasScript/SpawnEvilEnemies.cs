@@ -80,6 +80,7 @@ public class SpawnEvilEnemies : MonoBehaviour
             }
             else if (round == 11 && !roundIsBusy)
             {
+                game.isBossBattleActive = true;
                 StartCoroutine(BossFight());
             }
             else if (spawnedEnemies.Count == 0 && !roundIsBusy)
@@ -134,7 +135,6 @@ public class SpawnEvilEnemies : MonoBehaviour
     }
     public IEnumerator BossFight()
     {
-        game.isBossBattleActive = true;
         roundIsBusy = true;
         yield return new WaitForSeconds(2f);
         game.playerHealth = 8;

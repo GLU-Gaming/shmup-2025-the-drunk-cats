@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (game.specialMoveValue >= 200)
+        if (game.specialMoveValue >= 200 && !game.isBossBattleActive)
         {
             qButton.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Q))
