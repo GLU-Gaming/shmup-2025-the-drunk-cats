@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject lifePickup;
     public SpawnEvilEnemies SpawnEvilEnemies;
     float waitTime;
-    float minTimeBomb = 10f;
-    float maxTimeBomb = 11f;
+    float minTimeBomb = 40f;
+    float maxTimeBomb = 80f;
     float minTimeHealth = 40f;
     float maxTimeHealth = 80f;
     public int playerHealth = 8;
