@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     float maxTimeBomb = 80f;
     float minTimeHealth = 40f;
     float maxTimeHealth = 80f;
-    public int playerHealth = 5;
+    public int playerHealth = 8;
     public int playerScore = 0;
     public int specialMoveValue = 0;
 
