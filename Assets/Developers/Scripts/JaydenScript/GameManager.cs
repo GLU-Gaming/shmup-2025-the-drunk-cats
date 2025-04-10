@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Player player;
     public GameObject pickup;
     public GameObject lifePickup;
+    public SpawnEvilEnemies SpawnEvilEnemies;
     float waitTime;
     float minTimeBomb = 40f;
     float maxTimeBomb = 80f;
@@ -22,13 +23,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<Player>();
+        SpawnEvilEnemies = FindFirstObjectByType<SpawnEvilEnemies>();
         StartCoroutine(SpawnPickup());
         StartCoroutine(SpawnLifePickup());
     }
 
     private IEnumerator SpawnPickup()
     {
-        while (true)
+        while (SpawnEvilEnemies.round < 11)
         {
             Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
             waitTime = Random.Range(minTimeBomb, maxTimeBomb);

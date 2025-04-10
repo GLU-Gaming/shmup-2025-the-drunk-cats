@@ -23,7 +23,7 @@ public class SpawnEvilEnemies : MonoBehaviour
     private float xFrog;
     private float yFrog;
     public int round = 1;
-    bool roundIsBusy = false;
+    public bool roundIsBusy = false;
 
     [SerializeField] GameObject[] evilEnemies;
     public List<GameObject> spawnedEnemies;

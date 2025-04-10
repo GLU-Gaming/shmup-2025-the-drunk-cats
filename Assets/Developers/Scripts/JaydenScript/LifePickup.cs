@@ -14,7 +14,6 @@ public class LifePickup : MonoBehaviour
     {
         player = FindFirstObjectByType<Player>();
         game = FindFirstObjectByType<GameManager>();
-        game.playerHealth = 8;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,7 +24,7 @@ public class LifePickup : MonoBehaviour
             Destroy(gameObject);
             if (game.playerHealth < 8)
             {
-                game.playerHealth++;
+                game.playerHealth += 1;
             }
         }
     }
