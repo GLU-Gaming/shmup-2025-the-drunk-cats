@@ -136,8 +136,8 @@ public class SpawnEvilEnemies : MonoBehaviour
     {
         game.isBossBattleActive = true;
         roundIsBusy = true;
-        game.playerHealth = 8;
         yield return new WaitForSeconds(2f);
+        game.playerHealth = 8;
         audioSource.Stop();
         audioSource.PlayOneShot(BossTheme);
         Vector3 bossLocation = new Vector3(13, 0, 0);
