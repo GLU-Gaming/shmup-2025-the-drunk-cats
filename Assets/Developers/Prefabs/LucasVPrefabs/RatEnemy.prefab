@@ -78,6 +78,7 @@ MonoBehaviour:
   rbRat: {fileID: 6439356400374503996}
   tfRat: {fileID: 2580469484454048183}
   speedRat: 0
+  velocityRatReset: -50
 --- !u!65 &4079857964622837392
 BoxCollider:
   m_ObjectHideFlags: 0

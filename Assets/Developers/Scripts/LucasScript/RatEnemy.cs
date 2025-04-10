@@ -5,18 +5,19 @@ public class RatEnemy : MonoBehaviour
 
     [SerializeField] Rigidbody rbRat;
     [SerializeField] Transform tfRat;
-    [SerializeField] float speedRat;
+    [SerializeField] float speedRat = -2.5f;
     private float velocityRat;
+    [SerializeField] private float velocityRatReset;
     private RatState currentRatState;
     private enum RatState { Up, Down};
     private float timerRat;
-    private float healthRat = 4f;
+    private float healthRat = 2f;
     private SpawnEvilEnemies spawnManager;
     void Start()
     {
         currentRatState = RatState.Up;
 
-        velocityRat = -2f;
+        //velocityRat = -2.5f;
 
         ChangeHeight();
 
@@ -101,7 +102,7 @@ public class RatEnemy : MonoBehaviour
 
         if (tfRat.position.x > 12f)
         {
-            velocityRat = -2f;
+            velocityRat = velocityRatReset;
         }
     }
 

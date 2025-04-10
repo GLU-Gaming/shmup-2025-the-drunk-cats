@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager game;
     [SerializeField] private BombPickup bombPickup;
+    [SerializeField] private float pitchMin;
+    [SerializeField] private float pitchMax;
     public GameObject pauseMenuUI;
     public GameObject qButton;
     public bool pickupActivated = false;
@@ -75,7 +77,10 @@ public class Player : MonoBehaviour
     public void shoot()
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        float randomPitch = UnityEngine.Random.Range(pitchMin, pitchMax);
+        audioSource.pitch = randomPitch;
         audioSource.PlayOneShot(shootSound);
+
     }
 
     public void specialMove()

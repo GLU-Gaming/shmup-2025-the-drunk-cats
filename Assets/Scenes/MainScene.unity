@@ -1378,6 +1378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1880977166089579986, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
+      propertyPath: m_Height
+      value: 2.51
+      objectReference: {fileID: 0}
     - target: {fileID: 4640045849330718222, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
       propertyPath: m_Drag
       value: 5
@@ -1477,6 +1481,14 @@ PrefabInstance:
     - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
       propertyPath: fireRate
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
+      propertyPath: pitchMax
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
+      propertyPath: pitchMin
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
       propertyPath: shootSound
@@ -2921,7 +2933,7 @@ RectTransform:
   m_GameObject: {fileID: 1513800638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.76664, y: 0.76664, z: 0.76664}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1196086976}
@@ -3760,6 +3772,10 @@ PrefabInstance:
       propertyPath: evilEnemies.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
+      propertyPath: 'evilEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5201191611410137520, guid: 1fe63930ee121ba48bb4003ec19ac4ab, type: 3}
     - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
       propertyPath: 'evilEnemies.Array.data[2]'
       value: 
