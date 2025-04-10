@@ -5,6 +5,8 @@ public class RailCannon : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] GameObject laserWarn;
 
+    [SerializeField] GameObject laserModel;
+
     [SerializeField] Transform laserPoint;
 
     private float laserTCD;
@@ -163,6 +165,7 @@ public class RailCannon : MonoBehaviour
             }
             Destroy(laserShoot);
             Destroy(warningLaser);
+            Destroy(laserModel);
             Destroy(railCannon);
         }
     }

@@ -11,6 +11,8 @@ public class Minigun : MonoBehaviour
 
     [SerializeField] float minigunC = 0.07f;
 
+    [SerializeField] GameObject minigunModel;
+
     [SerializeField] float minigunSU;
     [SerializeField] GameObject minigunB;
     [SerializeField] Transform minigun;
@@ -90,6 +92,7 @@ public class Minigun : MonoBehaviour
         if (health <= 0)
         {
             RocketLauncher.enabled = true;
+            Destroy(minigunModel);
             Destroy(minigunS);
         }
     }

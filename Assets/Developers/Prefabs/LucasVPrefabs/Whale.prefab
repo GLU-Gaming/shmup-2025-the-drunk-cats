@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 6306822786217543052, guid: 49afe863da4ea91429fed6535f981e58, type: 3}
   laserWarn: {fileID: 5375897151346447318, guid: 20121feff5d2ab24da3b956c82a0a9c3, type: 3}
+  laserModel: {fileID: 3332889135039772353}
   laserPoint: {fileID: 148196619283181345}
   health: 20
 --- !u!136 &9057955443649690625
@@ -403,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigunC: 0.07
+  minigunModel: {fileID: 2871090364193717884}
   minigunSU: 0
   minigunB: {fileID: 8762855471704505457, guid: 5dcb5e700b7588142b09d9b84c472414, type: 3}
   minigun: {fileID: 6024864425360820027}
@@ -491,6 +493,10 @@ PrefabInstance:
       value: Crow
       objectReference: {fileID: 0}
     - target: {fileID: 623433575273853050, guid: 310be90016de1294cb9a6c5792dd5b79, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 623433575273853050, guid: 310be90016de1294cb9a6c5792dd5b79, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e4a39aff932f5d54dba89786d190b552, type: 2}
@@ -518,6 +524,16 @@ PrefabInstance:
 --- !u!4 &148196619283181345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -956662818629595158, guid: 310be90016de1294cb9a6c5792dd5b79, type: 3}
+  m_PrefabInstance: {fileID: 8122171792967852235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2871090364193717884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2922861107236577609, guid: 310be90016de1294cb9a6c5792dd5b79, type: 3}
+  m_PrefabInstance: {fileID: 8122171792967852235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3332889135039772353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6842952679648794122, guid: 310be90016de1294cb9a6c5792dd5b79, type: 3}
   m_PrefabInstance: {fileID: 8122171792967852235}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6024864425360820027 stripped
