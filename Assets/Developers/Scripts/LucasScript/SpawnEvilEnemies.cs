@@ -61,15 +61,15 @@ public class SpawnEvilEnemies : MonoBehaviour
             }
             else if (round == 8 && !roundIsBusy)
             {
-                StartCoroutine(Round(10, 8, 8));
+                StartCoroutine(Round(8, 8, 8));
             }
             else if (round == 9 && !roundIsBusy)
             {
-                StartCoroutine(Round(15, 10, 8));
+                StartCoroutine(Round(10, 8, 8));
             }
             else if (round == 10 && !roundIsBusy)
             {
-                StartCoroutine(Round(20, 10, 10));
+                StartCoroutine(Round(12, 8, 8));
             }
             else if (round == 10 && !roundIsBusy)
             {
@@ -115,7 +115,7 @@ public class SpawnEvilEnemies : MonoBehaviour
             yield return new WaitForSeconds(2f);
             xFrog = Random.Range(12f, 14f);
             yFrog = Random.Range(-4f, 4f);
-            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(0, 0, 0));
+            GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(0, 180, 0));
             spawnedEnemies.Add(frog);
         }
         round++;

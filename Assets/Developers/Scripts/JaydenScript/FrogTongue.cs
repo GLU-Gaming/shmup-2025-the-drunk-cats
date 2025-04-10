@@ -16,7 +16,7 @@ public class FrogTongue : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerProjectile"))
         {
             isHit = true;
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); 
             frogEnemy.frogActivate = false;
         }
     }

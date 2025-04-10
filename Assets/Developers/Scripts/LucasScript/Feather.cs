@@ -18,13 +18,12 @@ public class Feather : MonoBehaviour
         //Spawn with a velocity.
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        rbBullet.linearVelocity = transform.right * -7f;
+        Vector3 direction = (player.position - transform.position).normalized;
 
-        Vector3 direction = player.position - transform.position;
+        rbBullet.linearVelocity = direction * 7f;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        tfBullet.rotation = Quaternion.LookRotation(direction);
 
-        tfBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
 
 
     }

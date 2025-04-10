@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6573661555724026890}
   - component: {fileID: 9112340590996882529}
   - component: {fileID: 8592618926380639578}
-  - component: {fileID: 7515330690322958177}
   m_Layer: 7
   m_Name: Bomb
   m_TagString: PlayerSuperProjectile
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: ca2ed216f98028c4dae6c5224a952b3c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,21 +136,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7515330690322958177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6136709326378263732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90146d3e1c7626f4b815fd80dad2f076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 6136709326378263732}
-  rb: {fileID: 8592618926380639578}
-  throwForce: 50
-  throwUpForce: 20
-  radius: 0.1
-  force: 1

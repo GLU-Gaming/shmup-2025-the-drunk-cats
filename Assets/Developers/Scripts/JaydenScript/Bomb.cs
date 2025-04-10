@@ -9,8 +9,9 @@ public class Bomb : MonoBehaviour
     [SerializeField] Rigidbody rb;
     public float throwForce = 1f;
     public float throwUpForce = 1f;
-    public float radius = 0.5f;
+    public float radius;
     public float force = 200f;
+    public AudioClip bombExplosionSound;
 
     private SpawnEvilEnemies spawnManager;
 
@@ -20,6 +21,12 @@ public class Bomb : MonoBehaviour
         player = FindFirstObjectByType<Player>();
         spawnManager = FindFirstObjectByType<SpawnEvilEnemies>();
 
+        SphereCollider sphereCollider = GetComponent<SphereCollider>();
+        if (sphereCollider != null)
+        {
+            radius = sphereCollider.radius * transform.localScale.x;
+        }
+
         Vector3 force = transform.forward * throwForce + transform.up * throwUpForce;
         rb.AddForce(force, ForceMode.Impulse);
     }
@@ -28,6 +35,7 @@ public class Bomb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crow") || collision.gameObject.CompareTag("Frog") || collision.gameObject.CompareTag("Rat"))
         {
+            player.audioSource.PlayOneShot(bombExplosionSound);
             Explode();
         }
     }
@@ -35,21 +43,21 @@ public class Bomb : MonoBehaviour
     public void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
-
         foreach (Collider nearbyObject in colliders)
         {
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (nearbyObject != null && nearbyObject.CompareTag("Crow") ||
+                nearbyObject.CompareTag("Frog") ||
+                nearbyObject.CompareTag("Rat"))
             {
-                rb.AddExplosionForce(force, transform.position, radius);
-            }
-            if (nearbyObject.CompareTag("Crow") || nearbyObject.CompareTag("Frog") || nearbyObject.CompareTag("Rat"))
-            {
-                if (spawnManager != null)
+                if (spawnManager != null && nearbyObject.gameObject != null)
                 {
                     spawnManager.RemoveEnemy(nearbyObject.gameObject);
                 }
-                Destroy(nearbyObject.gameObject);
+
+                if (nearbyObject.gameObject != null)
+                {
+                    Destroy(nearbyObject.gameObject);
+                }
             }
         }
 

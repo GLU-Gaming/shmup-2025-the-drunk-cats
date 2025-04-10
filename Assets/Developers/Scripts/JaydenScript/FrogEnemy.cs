@@ -59,7 +59,7 @@ public class FrogEnemy : MonoBehaviour
         {
             if (!frogActivate)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(5f);
                 frogActivate = true;
                 yield return new WaitUntil(() => frogActivate);
             }
@@ -83,7 +83,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * -14 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * -7 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -94,7 +94,7 @@ public class FrogEnemy : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            tongue.transform.Translate(Vector3.right * 14 * Time.deltaTime);
+            tongue.transform.Translate(Vector3.right * 7 * Time.deltaTime);
             tongue.transform.localScale = Vector3.Lerp(targetScale, initialScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
