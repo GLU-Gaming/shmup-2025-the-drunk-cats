@@ -34,6 +34,7 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.visible = true;
             if (GameIsPaused)
             {
                 Resume();
@@ -59,6 +60,7 @@ public class PauseGame : MonoBehaviour
 
     public void Pause()
     {
+        Cursor.visible = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
