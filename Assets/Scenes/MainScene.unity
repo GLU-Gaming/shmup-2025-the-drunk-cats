@@ -3733,6 +3733,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
+      propertyPath: round
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1863709851}
+    - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
       propertyPath: AudioRat
       value: 
       objectReference: {fileID: 8300000, guid: b2413aa19cfdbfe4b88421b5bfe3090b, type: 3}
@@ -3744,6 +3752,10 @@ PrefabInstance:
       propertyPath: AudioFrog
       value: 
       objectReference: {fileID: 8300000, guid: 8247ac87db7e30e48818edeeff892612, type: 3}
+    - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
+      propertyPath: bossWhale
+      value: 
+      objectReference: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
     - target: {fileID: 7640097369672314807, guid: e1a5e02b3bb79cc43a8a7cb1ef1fc874, type: 3}
       propertyPath: m_Enabled
       value: 1

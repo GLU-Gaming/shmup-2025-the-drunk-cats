@@ -12,6 +12,8 @@ public class SpawnEvilEnemies : MonoBehaviour
     [SerializeField] AudioClip AudioFrog;
     public AudioSource audioSource;
 
+    public GameObject player;
+    public GameObject bossWhale;
     private float xCrow;
     private float yCrow;
     private float xRat;
@@ -71,9 +73,13 @@ public class SpawnEvilEnemies : MonoBehaviour
             {
                 StartCoroutine(Round(12, 8, 8));
             }
-            else if (round == 10 && !roundIsBusy)
+            else if (round == 11 && !roundIsBusy)
             {
-                SceneManager.LoadScene(2);
+                StartCoroutine(BossFight());
+            }
+            else if (round == 12 && !roundIsBusy)
+            {
+                SceneManager.LoadScene(3);
             }
         }
     }
@@ -118,6 +124,16 @@ public class SpawnEvilEnemies : MonoBehaviour
             GameObject frog = Instantiate(evilEnemies[2], new Vector3(xFrog, yFrog, 0), Quaternion.Euler(0, 180, 0));
             spawnedEnemies.Add(frog);
         }
+        round++;
+        roundIsBusy = false;
+    }
+    public IEnumerator BossFight()
+    {
+        roundIsBusy = true;
+        yield return new WaitForSeconds(2f);
+        Vector3 bossLocation = new Vector3(13, 0, 0);
+        Instantiate(bossWhale, bossLocation, transform.rotation);
+        player.transform.position = new Vector3(-5, 0, 0);
         round++;
         roundIsBusy = false;
     }

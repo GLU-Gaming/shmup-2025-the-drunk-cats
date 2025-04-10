@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (playerHealth <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
         PlayerPrefs.SetInt("finalscore", playerScore);
     }
