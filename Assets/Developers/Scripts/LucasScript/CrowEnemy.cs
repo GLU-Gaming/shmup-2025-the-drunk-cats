@@ -33,7 +33,7 @@ public class CrowEnemy : MonoBehaviour
     void Start()
     {
 
-        speedCrow = -3f;
+        speedCrow = -6f;
 
         MoveCrow();
 
