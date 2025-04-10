@@ -2,7 +2,6 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.WSA;
 
 public class BombPickup : MonoBehaviour
 {
