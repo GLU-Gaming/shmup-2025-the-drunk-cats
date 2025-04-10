@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
                 game.specialMoveValue = 0;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+        if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime || Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             shoot();
             nextFireTime = Time.time + fireRate;

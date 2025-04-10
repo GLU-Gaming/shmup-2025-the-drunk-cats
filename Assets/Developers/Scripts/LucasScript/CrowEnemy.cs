@@ -15,7 +15,7 @@ public class CrowEnemy : MonoBehaviour
 
     private Transform player;
 
-    private float healthCrow = 2f;
+    private float healthCrow = 3f;
 
     private float timerCrow;
 
@@ -33,7 +33,7 @@ public class CrowEnemy : MonoBehaviour
     void Start()
     {
 
-        speedCrow = -6f;
+        speedCrow = -3f;
 
         MoveCrow();
 
@@ -133,7 +133,7 @@ public class CrowEnemy : MonoBehaviour
     private void DashToPlayer()
     {
 
-        speedCrow -= 0.2f;
+        speedCrow -= 0.06f;
 
         MoveCrow();
 

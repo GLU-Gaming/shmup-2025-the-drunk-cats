@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int playerHealth = 8;
     public int playerScore = 0;
     public int specialMoveValue = 0;
+    public bool isBossBattleActive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,12 +31,19 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnPickup()
     {
-        while (SpawnEvilEnemies.round < 11)
+        while (true)
         {
-            Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
-            waitTime = Random.Range(minTimeBomb, maxTimeBomb);
-            yield return new WaitForSeconds(waitTime);
-            Instantiate(pickup, spawnLocation, Quaternion.identity);
+            if (!isBossBattleActive)
+            {
+                Vector3 spawnLocation = new Vector3(Random.Range(-7, 0), Random.Range(-2, 4), 0);
+                waitTime = Random.Range(minTimeBomb, maxTimeBomb);
+                yield return new WaitForSeconds(waitTime);
+                Instantiate(pickup, spawnLocation, Quaternion.identity);
+            }
+            else
+            {
+                yield return null;
+            }
         }
     }
 

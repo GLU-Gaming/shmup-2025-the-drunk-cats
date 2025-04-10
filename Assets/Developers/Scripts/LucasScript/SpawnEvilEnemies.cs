@@ -14,6 +14,7 @@ public class SpawnEvilEnemies : MonoBehaviour
     [SerializeField] AudioClip MainTheme;
     public AudioSource audioSource;
 
+    [SerializeField] private GameManager game;
     public GameObject player;
     public GameObject bossWhale;
     private float xCrow;
@@ -30,6 +31,7 @@ public class SpawnEvilEnemies : MonoBehaviour
 
     void Start()
     {
+        game = FindFirstObjectByType<GameManager>();
         spawnedEnemies = new List<GameObject>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(Round(8, 0, 0));
@@ -132,7 +134,9 @@ public class SpawnEvilEnemies : MonoBehaviour
     }
     public IEnumerator BossFight()
     {
+        game.isBossBattleActive = true;
         roundIsBusy = true;
+        game.playerHealth = 8;
         yield return new WaitForSeconds(2f);
         audioSource.Stop();
         audioSource.PlayOneShot(BossTheme);

@@ -1593,7 +1593,7 @@ PrefabInstance:
       objectReference: {fileID: 1410767717}
     - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
       propertyPath: speed
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7841250066133604833, guid: 40b279b331a1ef94aa4c25051862a02b, type: 3}
       propertyPath: Pickup
@@ -2813,6 +2813,7 @@ MonoBehaviour:
   playerHealth: 8
   playerScore: 0
   specialMoveValue: 0
+  isBossBattleActive: 0
 --- !u!4 &1410767718
 Transform:
   m_ObjectHideFlags: 0

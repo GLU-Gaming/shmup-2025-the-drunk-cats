@@ -89,8 +89,7 @@ public class RailCannon : MonoBehaviour
                 laserFired = false;
                 laserFiredWarn = false;
                 laserTCD = 0;
-                laserTCDW = 0;  
-            
+                laserTCDW = 0;
         }
 
         if (laserTCDW >= 0.1f)
@@ -129,6 +128,7 @@ public class RailCannon : MonoBehaviour
                 laserShoot = warn;
 
                 laserFired = true;
+
             }
         
             if (warningLaser != null)
