@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: d6b984f76a787dd4db2e7da665cc11f3
   - enabled: 1
-    path: Assets/Scenes/BossBattle.unity
-    guid: 6163a0d2d81702e4b82e4f75d07e89ee
-  - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: aa77e78cb08302b4393aec6600ba1d71
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 4ed234c5f5a98dc459e15926faad60f7
+  - enabled: 0
+    path: Assets/Scenes/BossBattle.unity
+    guid: 6163a0d2d81702e4b82e4f75d07e89ee
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05

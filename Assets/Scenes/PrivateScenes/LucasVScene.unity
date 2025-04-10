@@ -1351,6 +1351,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845064983}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1024718061 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 148196619283181345, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+  m_PrefabInstance: {fileID: 4289197313173964156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1039510879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6024864425360820027, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+  m_PrefabInstance: {fileID: 4289197313173964156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148047971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,14 +3401,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554361117881012901, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Height
+      value: 2.5946827
+      objectReference: {fileID: 0}
+    - target: {fileID: 554361117881012901, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Radius
+      value: 1.2973413
+      objectReference: {fileID: 0}
+    - target: {fileID: 554361117881012901, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Center.x
+      value: -5.4095745
+      objectReference: {fileID: 0}
+    - target: {fileID: 554361117881012901, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Center.y
+      value: -3.3371978
+      objectReference: {fileID: 0}
+    - target: {fileID: 554361117881012901, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
+      propertyPath: m_Center.z
+      value: -0.24222815
+      objectReference: {fileID: 0}
     - target: {fileID: 3338903188781272476, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: laserPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1024718061}
     - target: {fileID: 4434575149220038057, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: minigun
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1039510879}
     - target: {fileID: 5050366856242810515, guid: 0c73ac9f33d0f2540a5564fdaa8c2e35, type: 3}
       propertyPath: m_Name
       value: Whale

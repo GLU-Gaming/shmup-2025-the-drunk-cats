@@ -300,7 +300,7 @@ MonoBehaviour:
   healthFrog: 5
   scaleDuration: 1
   moveSpeed: 2
-  frogActivate: 0
+  frogActivate: 1
   frogEnemy: {fileID: 2304914468410159162}
 --- !u!136 &8059639195700126265
 CapsuleCollider:
